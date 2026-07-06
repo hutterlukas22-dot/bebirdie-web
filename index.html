@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BeBirdie — Byznys & lifestyle klub | Golf, vzdělávání, víno</title>
+<meta name="description" content="BeBirdie propojuje svět sportu, osobního rozvoje a lifestylu. Golfové turnaje, AI vzdělávání, vína a komunita podnikatelů. Buď, kým chceš.">
+<meta name="theme-color" content="#1b1214">
+<meta property="og:title" content="BeBirdie — Byznys &amp; lifestyle klub">
+<meta property="og:description" content="Golfové turnaje, AI vzdělávání, vína a komunita podnikatelů. Buď, kým chceš.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="cs_CZ">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='50' fill='%23BD1218'/%3E%3Cpath fill='%23fff' d='M22 30A38 38 0 0 1 57 13 30 30 0 0 0 29 44 38 38 0 0 1 22 30Z'/%3E%3Cpath fill='%23fff' d='M42 30c13-3 25 5 28 16 8 3 17 0 22-6-1 16-13 27-27 28-4 12-16 20-28 19C22 86 12 73 13 59 14 44 27 33 42 30Z'/%3E%3Ccircle cx='61' cy='46' r='6.5' fill='%23BD1218'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,340;0,9..144,400;0,9..144,500;1,9..144,300;1,9..144,340&family=Inter:wght@400;500;600;700&family=Quicksand:wght@700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Organization","name":"BeBirdie","url":"https://www.bebirdie.cz/","email":"bebirdie@bebirdie.cz","telephone":"+420606790905","slogan":"Buď, kým chceš!"}
+</script>
+</head>
+<body class="no-js">
+<noscript><style>.nav__links{display:flex!important;flex-wrap:wrap}.nav__burger{display:none!important}</style></noscript>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="bb-logo" viewBox="0 0 100 100">
+    <circle cx="50" cy="50" r="50" fill="#BD1218"/>
+    <path fill="#fff" d="M22 30A38 38 0 0 1 57 13 30 30 0 0 0 29 44 38 38 0 0 1 22 30Z"/>
+    <path fill="#fff" d="M42 30c13-3 25 5 28 16 8 3 17 0 22-6-1 16-13 27-27 28-4 12-16 20-28 19C22 86 12 73 13 59 14 44 27 33 42 30Z"/>
+    <circle cx="61" cy="46" r="6.5" fill="#BD1218"/>
+  </symbol>
+  <symbol id="ic-ig" viewBox="0 0 24 24">
+    <rect x="3.2" y="3.2" width="17.6" height="17.6" rx="4.5" fill="none" stroke="currentColor" stroke-width="1.7"/>
+    <circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="1.7"/>
+    <circle cx="17" cy="7" r="1.2" fill="currentColor" stroke="none"/>
+  </symbol>
+</svg>
+
+<a class="skip-link" href="#main">Přeskočit na obsah</a>
+
+<!-- ============ NAV ============ -->
+<header class="nav nav--dark" id="nav">
+  <div class="nav__inner">
+    <a class="brand" href="index.html" aria-label="BeBirdie — domů">
+      <svg class="brand__icon" viewBox="0 0 100 100" aria-hidden="true"><use href="#bb-logo"/></svg>
+      <span class="brand__word">BeBirdie</span>
+    </a>
+    <nav aria-label="Hlavní navigace">
+      <ul class="nav__links">
+        <li><a href="kalendar.html">Kalendář</a></li>
+        <li><a href="tour.html">Tour 2026</a></li>
+        <li><a href="vzdelavani.html">Vzdělávání</a></li>
+        <li><a href="klub.html">Klub</a></li>
+        <li><a href="obchod.html">Obchod</a></li>
+      </ul>
+    </nav>
+    <div class="nav__right">
+      <button class="nav__icon nav__icon--search" data-open="ovlSearch" aria-label="Hledat">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.8-3.8"/></svg>
+      </button>
+      <a class="nav__icon nav__icon--wish" href="oblibene.html" aria-label="Oblíbené">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20.5c-4.7-3.2-8.5-6.4-8.5-10.2A4.6 4.6 0 0 1 8.1 5.6c1.6 0 3.1.9 3.9 2.3.8-1.4 2.3-2.3 3.9-2.3a4.6 4.6 0 0 1 4.6 4.7c0 3.8-3.8 7-8.5 10.2z"/></svg>
+        <span class="nav__badge" id="wishBadge">0</span>
+      </a>
+      <a class="nav__icon nav__icon--user" href="clenska-zona.html" aria-label="Členská zóna">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="3.4"/><path d="M5 20a7 7 0 0 1 14 0"/></svg>
+      </a>
+      <button class="nav__icon" data-open="ovlCart" aria-label="Košík">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 8h12l-1 11a2 2 0 0 1-2 1.8H9a2 2 0 0 1-2-1.8L6 8z"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8"/></svg>
+        <span class="nav__badge" id="cartBadge">0</span>
+      </button>
+      <a class="btn btn--solid" href="klub.html"><span class="lbl"><span>Požádat o členství</span><span>Požádat o členství</span></span></a>
+      <button class="nav__burger" data-open="ovlMenu" aria-label="Otevřít menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+<!-- ============ 01 · MANIFEST ============ -->
+<section class="hero" aria-label="Úvod">
+  <div class="hero__media"><img id="heroImg" src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?w=2000&q=80&auto=format&fit=crop" alt="Večerní klubové stolování" onerror="this.style.display='none'"></div>
+  <div class="hero__scrim"></div>
+  <div class="hero__content">
+    <div class="hero__left">
+      <p class="kicker hero__kicker" data-hero-fade>Byznys &amp; lifestyle klub · Praha</p>
+      <h1 class="display-xl split-lines" id="heroTitle">Kde se byznys stává životním stylem.</h1>
+      <p class="hero__tag" data-hero-fade>Buď, kým chceš.</p>
+      <div class="hero__actions" data-hero-fade>
+        <a class="btn btn--solid" href="klub.html"><span class="lbl"><span>Požádat o členství</span><span>Požádat o členství</span></span></a>
+        <a class="link-arrow" href="kalendar.html">Prohlédnout kalendář <span class="arr">↗</span></a>
+      </div>
+    </div>
+    <div class="hero__next" data-hero-fade>
+      <span class="lbl">Nejbližší akce</span>
+      <a href="akce-konopiste.html" class="tnum">Open Tour — Golf Konopiště · 11. 7. <span style="color:var(--gold)">↗</span></a>
+    </div>
+  </div>
+  <div class="hero__cue" aria-hidden="true"></div>
+</section>
+
+<!-- ============ 02 · JEDEN VEČER V KLUBU ============ -->
+<section class="evening" id="vecer" aria-label="Jeden den v klubu">
+  <div class="evening__intro">
+    <p class="kicker" data-reveal style="color:var(--gold)"><span class="num">02</span> Jeden den v klubu</p>
+    <h2 class="display" data-reveal>Neprodáváme akce. Režírujeme dny, na které se nezapomíná.</h2>
+  </div>
+  <div class="evening__pin">
+    <div class="evening__track" id="eveningTrack">
+      <article class="evening__panel">
+        <img class="ph-warm--dark" src="https://images.unsplash.com/photo-1535131749006-b7f58c99034b?w=1600&q=80&auto=format&fit=crop" alt="Golfové hřiště za svítání" onerror="this.style.display='none'">
+        <span class="ghost" data-ghost>09</span>
+        <div class="txt">
+          <span class="time">09:00</span>
+          <p class="cap"><b>První odpaliště.</b> Osmnáct jamek, žádné telefony. Nejlepší rozhovory začínají mezi odpalem a greenem.</p>
+        </div>
+      </article>
+      <article class="evening__panel">
+        <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=1600&q=80&auto=format&fit=crop" alt="Workshop o umělé inteligenci" onerror="this.style.display='none'">
+        <span class="ghost" data-ghost>15</span>
+        <div class="txt">
+          <span class="time">15:00</span>
+          <p class="cap"><b>AI workshop.</b> Lektoři z praxe, malá skupina, žádný marketing. Odcházíte s postupy, které v pondělí použijete.</p>
+        </div>
+      </article>
+      <article class="evening__panel">
+        <img src="https://images.unsplash.com/photo-1528605248644-14dd04022da1?w=1600&q=80&auto=format&fit=crop" alt="Večerní degustace a rozhovory" onerror="this.style.display='none'">
+        <span class="ghost" data-ghost>20</span>
+        <div class="txt">
+          <span class="time">20:00</span>
+          <p class="cap"><b>Degustace a rozhovory, které mění byznys.</b> Partnerství, investice i přátelství — to nejcennější vzniká po osmé večer.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 03 · TŘI SVĚTY ============ -->
+<section class="worlds" data-theme="ivory" id="svety" aria-label="Tři světy klubu">
+  <div class="container">
+    <p class="kicker" data-reveal><span class="num">03</span> Tři světy klubu</p>
+    <p class="worlds__lede body-lg" data-reveal>Propojujeme svět sportu, osobního rozvoje a lifestylu. Jeden klub, tři cesty — a všechny vedou k lidem, které jinde nepotkáte.</p>
+
+    <div class="spread">
+      <div class="spread__media clip-reveal"><img class="ph-warm" src="https://images.unsplash.com/photo-1587174486073-ae5e5cff23aa?w=1600&q=80&auto=format&fit=crop" alt="Detail golfového odpalu" onerror="this.style.display='none'"></div>
+      <div class="spread__body">
+        <span class="spread__num" data-reveal>01 — Golf</span>
+        <h3 class="h3" data-reveal>Golf jako společenský jazyk</h3>
+        <p data-reveal>Čtrnáct turnajů ročně, Open Tour na deseti hřištích Česka a zájezdy za golfem do zahraničí. Sociální sport, při kterém se uzavírají obchody i přátelství.</p>
+        <a class="link-arrow" href="kalendar.html" data-reveal>Objevit turnaje <span class="arr">↗</span></a>
+      </div>
+    </div>
+
+    <div class="spread spread--rev">
+      <div class="spread__media clip-reveal"><img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=1600&q=80&auto=format&fit=crop" alt="Vzdělávací setkání" onerror="this.style.display='none'"></div>
+      <div class="spread__body">
+        <span class="spread__num" data-reveal>02 — Vzdělávání</span>
+        <h3 class="h3" data-reveal>AI &amp; byznys vzdělávání</h3>
+        <p data-reveal>Praktické kurzy umělé inteligence a digitálního marketingu s lidmi, kteří technologie skutečně staví. Bez marketingu, jen podstata.</p>
+        <a class="link-arrow" href="vzdelavani.html" data-reveal>Prozkoumat kurzy <span class="arr">↗</span></a>
+      </div>
+    </div>
+
+    <div class="spread">
+      <div class="spread__media clip-reveal"><img src="https://images.unsplash.com/photo-1506377247377-2a5b3b417ebb?w=1600&q=80&auto=format&fit=crop" alt="Sklenka vína při západu slunce" onerror="this.style.display='none'"></div>
+      <div class="spread__body">
+        <span class="spread__num" data-reveal>03 — Lifestyle</span>
+        <h3 class="h3" data-reveal>Víno, zážitky, komunita</h3>
+        <p data-reveal>Kurátorovaná vinotéka, privátní degustace a večery, kde roste byznys i přátelství. Nic průměrného, nic navíc.</p>
+        <a class="link-arrow" href="obchod.html" data-reveal>Vstoupit do vinotéky <span class="arr">↗</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 04 · KALENDÁŘ ============ -->
+<section class="calendar" data-theme="ivory" id="kalendar" aria-label="Kalendář akcí">
+  <div class="container">
+    <div class="calendar__head">
+      <div>
+        <p class="kicker" data-reveal><span class="num">04</span> Kalendář 2026</p>
+        <h2 class="display" data-reveal>Co nás čeká<br>v nejbližší době</h2>
+      </div>
+      <a class="link-arrow" href="kalendar.html" data-reveal>Celý kalendář akcí <span class="arr">↗</span></a>
+    </div>
+
+    <div class="event-rows" data-reveal>
+      <a class="event-row" href="akce-konopiste.html" data-img="https://images.unsplash.com/photo-1535131749006-b7f58c99034b?w=600&q=70&auto=format&fit=crop">
+        <div class="date tnum">11/07<small>ČERVENEC</small></div>
+        <div><div class="ttl">BeBirdie Open Tour — Golf Konopiště</div><div class="meta"><span class="tag">Open Tour</span><span>Konopiště</span></div></div>
+        <div class="price tnum">2 400 Kč<small>vč. green fee</small></div>
+        <span class="act">Detail akce <span class="arr">→</span></span>
+      </a>
+      <a class="event-row" href="akce-prague-golf-card.html" data-img="https://images.unsplash.com/photo-1587174486073-ae5e5cff23aa?w=600&q=70&auto=format&fit=crop">
+        <div class="date tnum">05/08<small>SRPEN</small></div>
+        <div><div class="ttl">Prague Golf Card CUP</div><div class="meta"><span class="tag">Speciál</span><span>3 hřiště · 1 den · 1 autobus</span></div></div>
+        <div class="price tnum">3 900 Kč<small>celodenní roadtrip</small></div>
+        <span class="act">Detail akce <span class="arr">→</span></span>
+      </a>
+      <a class="event-row" href="akce-train-cup.html" data-img="https://images.unsplash.com/photo-1528605248644-14dd04022da1?w=600&q=70&auto=format&fit=crop">
+        <div class="date tnum">21/08<small>SRPEN</small></div>
+        <div><div class="ttl">Golf Train Cup — Black Stork</div><div class="meta"><span class="tag">Zájezd</span><span>Veľká Lomnica · vlakem z Prahy</span></div></div>
+        <div class="price tnum">od 7 900 Kč<small>vč. ubytování</small></div>
+        <span class="act">Detail akce <span class="arr">→</span></span>
+      </a>
+      <a class="event-row" href="akce-miss-golf.html" data-img="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?w=600&q=70&auto=format&fit=crop">
+        <div class="date tnum">05/09<small>ZÁŘÍ</small></div>
+        <div><div class="ttl">Miss Golf 2026 — 25. ročník</div><div class="meta"><span class="tag">Speciál</span><span>Golf Vinoř · elegance, krása a golf</span></div></div>
+        <div class="price tnum">15 000 Kč<small>flight pro 2 hráče</small></div>
+        <span class="act">Detail akce <span class="arr">→</span></span>
+      </a>
+      <a class="event-row" href="akce-lumina.html" data-img="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=600&q=70&auto=format&fit=crop">
+        <div class="date tnum">15/09<small>ZÁŘÍ</small></div>
+        <div><div class="ttl">Lumina Estates Cup — Black Bridge</div><div class="meta"><span class="tag">Turnaj</span><span>Praha · Black Bridge</span></div></div>
+        <div class="price tnum">5 000 Kč<small>vč. večerního rautu</small></div>
+        <span class="act">Detail akce <span class="arr">→</span></span>
+      </a>
+    </div>
+    <div class="calendar__foot" data-reveal>
+      <a class="btn btn--ink" href="kalendar.html"><span class="lbl"><span>Zobrazit všech 11 akcí</span><span>Zobrazit všech 11 akcí</span></span></a>
+      <a class="link-arrow" href="tour.html">BeBirdie Tour 2026 — sezónní členství <span class="arr">↗</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 05 · VZDĚLÁVÁNÍ ============ -->
+<section class="edu" data-theme="ivory" id="vzdelavani" aria-label="Vzdělávání">
+  <div class="container">
+    <div class="edu__head">
+      <div>
+        <p class="kicker" data-reveal><span class="num">05</span> Vzdělávání</p>
+        <h2 class="display" data-reveal>Rostěte rychleji než konkurence</h2>
+      </div>
+      <p data-reveal>Posouváme vás v kariéře skrze praktické kurzy — od umělé inteligence po digitální marketing. Vedou je lektoři z praxe, ne z prezentací.</p>
+    </div>
+    <div class="edu__grid">
+      <article class="edu-card" data-reveal>
+        <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=1400&q=75&auto=format&fit=crop" alt="AI workshop pro lídry" onerror="this.style.display='none'">
+        <span class="tag">AI kurz</span>
+        <h3 class="h3">AI pro byznys lídry</h3>
+        <p>Naučte se delegovat na umělou inteligenci. Konkrétní nástroje a postupy, které v pondělí nasadíte ve firmě.</p>
+        <div class="meta"><span><b>1 den</b> intenzivně</span><span><b>max 12</b> účastníků</span><span><b>Praha</b></span></div>
+        <a class="link-arrow" href="ai-kurzy.html">Detail kurzu <span class="arr">↗</span></a>
+      </article>
+      <article class="edu-card" data-reveal>
+        <img src="https://images.unsplash.com/photo-1556761175-b413da4baf72?w=1400&q=75&auto=format&fit=crop" alt="Workshop digitálního marketingu" onerror="this.style.display='none'">
+        <span class="tag">Kurz</span>
+        <h3 class="h3">Digitální marketing prakticky</h3>
+        <p>Od strategie po kampaně, které skutečně prodávají. Pro majitele firem, kteří chtějí marketingu rozumět, ne ho jen platit.</p>
+        <div class="meta"><span><b>2 odpoledne</b></span><span><b>naživo</b> i online</span><span><b>Praha</b></span></div>
+        <a class="link-arrow" href="vzdelavani.html">Detail kurzu <span class="arr">↗</span></a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 06 · ČLENSTVÍ ============ -->
+<section class="membership" data-theme="ink" id="clenstvi" aria-label="Členství">
+  <div class="container">
+    <div class="membership__grid">
+      <div class="membership__text">
+        <p class="kicker" data-reveal><span class="num">06</span> Klub &amp; členství</p>
+        <h2 class="display" data-reveal>Klub, do kterého se nevstupuje. Do kterého jste přijati.</h2>
+        <ul class="benefits">
+          <li data-reveal><span class="n">I.</span> Přednostní rezervace turnajů a zájezdů</li>
+          <li data-reveal><span class="n">II.</span> Uzavřené večery a degustace pouze pro členy</li>
+          <li data-reveal><span class="n">III.</span> Síť podnikatelů, investorů a partnerů klubu</li>
+          <li data-reveal><span class="n">IV.</span> Členské ceny na kurzy, vína i poukazy</li>
+        </ul>
+        <a class="btn btn--solid" href="klub.html" data-reveal><span class="lbl"><span>Požádat o členství</span><span>Požádat o členství</span></span></a>
+      </div>
+      <div class="membership__card-wrap" data-reveal>
+        <div class="m-card" id="mCard">
+          <div class="top">
+            <span class="brand"><svg class="brand__icon" viewBox="0 0 100 100" aria-hidden="true"><use href="#bb-logo"/></svg><span class="brand__word">BeBirdie</span></span>
+            <span class="tier">Founding member</span>
+          </div>
+          <span class="serial tnum">Nº 041</span>
+          <div class="bottom"><span>Členství 2026</span><span>Praha · CZ</span></div>
+        </div>
+      </div>
+      <div class="stats">
+        <div class="stat" data-reveal><div class="v tnum"><span data-count="14">0</span><sup>+</sup></div><div class="l">turnajů ročně</div></div>
+        <div class="stat" data-reveal><div class="v tnum"><span data-count="10">0</span></div><div class="l">hřišť Open Tour</div></div>
+        <div class="stat" data-reveal><div class="v tnum"><span data-count="25">0</span>.</div><div class="l">ročník Miss Golf</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 07 · VINOTÉKA ============ -->
+<section class="wine" data-theme="ivory" id="vinoteka" aria-label="Vinotéka">
+  <div class="container">
+    <div class="wine__head">
+      <div>
+        <p class="kicker" data-reveal><span class="num">07</span> Vinotéka</p>
+        <h2 class="display" data-reveal>Výběr sommeliera</h2>
+      </div>
+      <p class="wine__note" data-reveal>Tři láhve, za kterými si stojíme. Hledáte <a href="obchod.html#poukazy">dárkové poukazy</a> nebo <a href="tabory.html">golfové tábory pro děti</a>? Najdete je v obchodě.</p>
+    </div>
+    <div class="wine__grid">
+      <article class="wine-card" data-reveal>
+        <a class="ph" href="produkt-la-pieve.html"><img src="https://images.unsplash.com/photo-1506377247377-2a5b3b417ebb?w=900&q=75&auto=format&fit=crop" alt="Víno La Pieve" onerror="this.style.display='none'"></a>
+        <button class="wish" data-wish="la-pieve" aria-label="Přidat La Pieve do oblíbených"></button>
+        <h4><a href="produkt-la-pieve.html">La Pieve</a></h4>
+        <p class="origin">Toskánsko · Itálie</p>
+        <p class="note">Sangiovese s tichým, přesným finišem — víno na dlouhé rozhovory.</p>
+        <div class="row"><span class="price tnum">269 Kč</span><a class="add" href="produkt-la-pieve.html" data-add="la-pieve">Do košíku →</a></div>
+      </article>
+      <article class="wine-card" data-reveal>
+        <a class="ph" href="produkt-i-pecorari.html"><img src="https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=900&q=75&auto=format&fit=crop" alt="Víno I Pecorari" onerror="this.style.display='none'"></a>
+        <button class="wish" data-wish="i-pecorari" aria-label="Přidat I Pecorari do oblíbených"></button>
+        <h4><a href="produkt-i-pecorari.html">I Pecorari</a></h4>
+        <p class="origin">Friuli · Itálie</p>
+        <p class="note">Svěží, minerální, sebevědomé. Láhev, kterou otevíráte pro hosty.</p>
+        <div class="row"><span class="price tnum">239 Kč</span><a class="add" href="produkt-i-pecorari.html" data-add="i-pecorari">Do košíku →</a></div>
+      </article>
+      <article class="wine-card" data-reveal>
+        <a class="ph" href="produkt-casal.html"><img src="https://images.unsplash.com/photo-1474722883778-792e7990302f?w=900&q=75&auto=format&fit=crop" alt="Víno Casal da Coelheira" onerror="this.style.display='none'"></a>
+        <button class="wish" data-wish="casal" aria-label="Přidat Casal da Coelheira do oblíbených"></button>
+        <span class="badge">Červené</span>
+        <h4><a href="produkt-casal.html">Casal da Coelheira 2022</a></h4>
+        <p class="origin">Tejo · Portugalsko</p>
+        <p class="note">Plné, hřejivé, s dlouhým závěrem. K večeru u krbu i k jednání.</p>
+        <div class="row"><span class="price tnum">220 Kč</span><a class="add" href="produkt-casal.html" data-add="casal">Do košíku →</a></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ HLAS ČLENŮ ============ -->
+<section class="voices" data-theme="ivory" aria-label="Hlas členů">
+  <div class="container">
+    <div class="voices__inner">
+      <div>
+        <p class="kicker" data-reveal>Hlas členů</p>
+        <div class="voices__stage" id="voicesStage" data-reveal>
+          <blockquote id="quoteText"><span class="q">„</span>Přišel jsem kvůli golfu. Zůstal jsem kvůli lidem, kteří přemýšlejí stejně velkoryse, jako hrají.<span class="q">“</span></blockquote>
+          <div class="voices__who">
+            <img id="quoteImg" src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=200&q=70&auto=format&fit=crop" alt="" onerror="this.style.display='none'">
+            <div><div class="n" id="quoteName">Martin H.</div><div class="r" id="quoteRole">zakladatel investiční skupiny</div></div>
+          </div>
+        </div>
+        <div class="voices__nav" data-reveal>
+          <button id="qPrev" aria-label="Předchozí citace">←</button>
+          <button id="qNext" aria-label="Další citace">→</button>
+          <span class="voices__count tnum" id="qCount">01 / 03</span>
+        </div>
+      </div>
+      <div class="voices__proofcard" data-reveal>
+        <span class="stars" aria-hidden="true">★★★★★</span>
+        <div class="score tnum">4,9<span style="font-size:1.1rem;color:var(--t-mut-l)"> / 5</span></div>
+        <p class="src">Hodnocení podle 116 ověřených recenzí na Google</p>
+        <a class="link-arrow" href="https://www.google.com/search?q=BeBirdie+recenze" target="_blank" rel="noopener">Přečíst recenze <span class="arr">↗</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 08 · SOCIAL HUB ============ -->
+<section class="social" data-theme="ivory" id="komunita" aria-label="Ze života klubu">
+  <div class="container">
+    <div class="social__head">
+      <div>
+        <p class="kicker" data-reveal><span class="num">08</span> Ze života klubu</p>
+        <h2 class="display" data-reveal>Klub žije i mimo hřiště</h2>
+      </div>
+      <div data-reveal>
+        <div class="social__follow" style="margin-bottom:1rem">
+          <a href="https://www.instagram.com/bebirdie.cz/" target="_blank" rel="noopener" aria-label="Instagram BeBirdie"><svg viewBox="0 0 24 24"><use href="#ic-ig"/></svg></a>
+          <a href="https://www.facebook.com/bebirdie.cz" target="_blank" rel="noopener" aria-label="Facebook BeBirdie"><svg viewBox="0 0 24 24"><path d="M13.5 21v-8h2.7l.4-3.1h-3.1V7.9c0-.9.3-1.5 1.6-1.5h1.6V3.6c-.3 0-1.2-.1-2.3-.1-2.3 0-3.9 1.4-3.9 4v2.4H7.8V13h2.7v8h3z"/></svg></a>
+          <a href="https://www.linkedin.com/company/bebirdie" target="_blank" rel="noopener" aria-label="LinkedIn BeBirdie"><svg viewBox="0 0 24 24"><path d="M6.5 8.8H3.6V21h2.9V8.8zM5 7.4a1.7 1.7 0 1 0 0-3.4 1.7 1.7 0 0 0 0 3.4zM21 14.3c0-3.3-1.8-4.9-4.1-4.9-1.9 0-2.7 1-3.2 1.8V8.8h-2.9V21h2.9v-6.5c0-1.7.8-2.7 2.2-2.7 1.3 0 2.1.9 2.1 2.7V21H21v-6.7z"/></svg></a>
+        </div>
+        <a class="link-arrow" href="galerie.html">Fotogalerie z turnajů <span class="arr">↗</span></a>
+      </div>
+    </div>
+
+    <div class="social__grid">
+      <article class="s-card s-card--featured" data-reveal>
+        <div class="s-card__media">
+          <img src="https://images.unsplash.com/photo-1528605248644-14dd04022da1?w=1400&q=75&auto=format&fit=crop" alt="Aftermovie z turnaje" onerror="this.style.display='none'">
+          <span class="s-card__platform" aria-hidden="true"><svg viewBox="0 0 24 24"><use href="#ic-ig"/></svg></span>
+          <div class="s-card__play" aria-hidden="true"><span></span></div>
+        </div>
+        <div class="s-card__body">
+          <span class="s-card__date">Instagram Reel · 28. 6. 2026</span>
+          <p class="s-card__cap">PXG CUP 2026 na Ypsilonu — aftermovie, ze kterého mrazí. Díky všem 96 hráčům!</p>
+          <div class="s-card__meta">
+            <span><svg viewBox="0 0 24 24"><path d="M12 20.5c-4.7-3.2-8.5-6.4-8.5-10.2A4.6 4.6 0 0 1 8.1 5.6c1.6 0 3.1.9 3.9 2.3.8-1.4 2.3-2.3 3.9-2.3a4.6 4.6 0 0 1 4.6 4.7c0 3.8-3.8 7-8.5 10.2z"/></svg>1 284</span>
+            <span><svg viewBox="0 0 24 24"><path d="M21 11.5c0 4.1-4 7.5-9 7.5-1 0-2-.1-2.9-.4L4 20l1.2-3.6C3.8 15.1 3 13.4 3 11.5 3 7.4 7 4 12 4s9 3.4 9 7.5z"/></svg>96</span>
+          </div>
+          <a class="link-arrow s-card__cta" href="https://www.instagram.com/bebirdie.cz/" target="_blank" rel="noopener">Přehrát reel <span class="arr">↗</span></a>
+        </div>
+      </article>
+
+      <article class="s-card" data-reveal>
+        <div class="s-card__media">
+          <img class="ph-warm" src="https://images.unsplash.com/photo-1535131749006-b7f58c99034b?w=800&q=70&auto=format&fit=crop" alt="Golfové hřiště z výšky" onerror="this.style.display='none'">
+          <span class="s-card__platform" aria-hidden="true"><svg viewBox="0 0 24 24"><use href="#ic-ig"/></svg></span>
+        </div>
+        <div class="s-card__body">
+          <span class="s-card__date">Instagram · 22. 6. 2026</span>
+          <p class="s-card__cap">Karlštejn nám zahájil sezónu Open Tour. Deset hřišť, jedno pořadí, velké finále v říjnu.</p>
+          <div class="s-card__meta">
+            <span><svg viewBox="0 0 24 24"><path d="M12 20.5c-4.7-3.2-8.5-6.4-8.5-10.2A4.6 4.6 0 0 1 8.1 5.6c1.6 0 3.1.9 3.9 2.3.8-1.4 2.3-2.3 3.9-2.3a4.6 4.6 0 0 1 4.6 4.7c0 3.8-3.8 7-8.5 10.2z"/></svg>642</span>
+            <span><svg viewBox="0 0 24 24"><path d="M21 11.5c0 4.1-4 7.5-9 7.5-1 0-2-.1-2.9-.4L4 20l1.2-3.6C3.8 15.1 3 13.4 3 11.5 3 7.4 7 4 12 4s9 3.4 9 7.5z"/></svg>41</span>
+          </div>
+          <a class="link-arrow s-card__cta" href="https://www.instagram.com/bebirdie.cz/" target="_blank" rel="noopener">Zobrazit post <span class="arr">↗</span></a>
+        </div>
+      </article>
+
+      <article class="s-card" data-reveal>
+        <div class="s-card__media">
+          <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=800&q=70&auto=format&fit=crop" alt="Přednáška o AI" onerror="this.style.display='none'">
+          <span class="s-card__platform" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6.5 8.8H3.6V21h2.9V8.8zM5 7.4a1.7 1.7 0 1 0 0-3.4 1.7 1.7 0 0 0 0 3.4zM21 14.3c0-3.3-1.8-4.9-4.1-4.9-1.9 0-2.7 1-3.2 1.8V8.8h-2.9V21h2.9v-6.5c0-1.7.8-2.7 2.2-2.7 1.3 0 2.1.9 2.1 2.7V21H21v-6.7z"/></svg></span>
+        </div>
+        <div class="s-card__body">
+          <span class="s-card__date">LinkedIn · 24. 6. 2026</span>
+          <p class="s-card__cap">Proč úspěšní lídři investují do AI vzdělávání dřív, než musí. Shrnutí z červnového kurzu.</p>
+          <div class="s-card__meta">
+            <span><svg viewBox="0 0 24 24"><path d="M12 20.5c-4.7-3.2-8.5-6.4-8.5-10.2A4.6 4.6 0 0 1 8.1 5.6c1.6 0 3.1.9 3.9 2.3.8-1.4 2.3-2.3 3.9-2.3a4.6 4.6 0 0 1 4.6 4.7c0 3.8-3.8 7-8.5 10.2z"/></svg>214</span>
+            <span><svg viewBox="0 0 24 24"><path d="M21 11.5c0 4.1-4 7.5-9 7.5-1 0-2-.1-2.9-.4L4 20l1.2-3.6C3.8 15.1 3 13.4 3 11.5 3 7.4 7 4 12 4s9 3.4 9 7.5z"/></svg>32</span>
+          </div>
+          <a class="link-arrow s-card__cta" href="https://www.linkedin.com/company/bebirdie" target="_blank" rel="noopener">Přečíst článek <span class="arr">↗</span></a>
+        </div>
+      </article>
+
+      <article class="s-card" data-reveal>
+        <div class="s-card__media">
+          <img class="ph-warm" src="https://images.unsplash.com/photo-1587174486073-ae5e5cff23aa?w=800&q=70&auto=format&fit=crop" alt="Golfový míček na jamce" onerror="this.style.display='none'">
+          <span class="s-card__platform" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M13.5 21v-8h2.7l.4-3.1h-3.1V7.9c0-.9.3-1.5 1.6-1.5h1.6V3.6c-.3 0-1.2-.1-2.3-.1-2.3 0-3.9 1.4-3.9 4v2.4H7.8V13h2.7v8h3z"/></svg></span>
+        </div>
+        <div class="s-card__body">
+          <span class="s-card__date">Facebook · 30. 6. 2026</span>
+          <p class="s-card__cap">Open Tour Konopiště se blíží — v pátek uzavíráme startovní listinu. Kdo jede s námi?</p>
+          <div class="s-card__meta">
+            <span><svg viewBox="0 0 24 24"><path d="M12 20.5c-4.7-3.2-8.5-6.4-8.5-10.2A4.6 4.6 0 0 1 8.1 5.6c1.6 0 3.1.9 3.9 2.3.8-1.4 2.3-2.3 3.9-2.3a4.6 4.6 0 0 1 4.6 4.7c0 3.8-3.8 7-8.5 10.2z"/></svg>158</span>
+            <span><svg viewBox="0 0 24 24"><path d="M21 11.5c0 4.1-4 7.5-9 7.5-1 0-2-.1-2.9-.4L4 20l1.2-3.6C3.8 15.1 3 13.4 3 11.5 3 7.4 7 4 12 4s9 3.4 9 7.5z"/></svg>87</span>
+          </div>
+          <a class="link-arrow s-card__cta" href="https://www.facebook.com/bebirdie.cz" target="_blank" rel="noopener">Připojit se k diskuzi <span class="arr">↗</span></a>
+        </div>
+      </article>
+
+      <article class="s-card" data-reveal>
+        <div class="s-card__media">
+          <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&q=70&auto=format&fit=crop" alt="Privátní degustace" onerror="this.style.display='none'">
+          <span class="s-card__platform" aria-hidden="true"><svg viewBox="0 0 24 24"><use href="#ic-ig"/></svg></span>
+        </div>
+        <div class="s-card__body">
+          <span class="s-card__date">Instagram · 18. 6. 2026</span>
+          <p class="s-card__cap">Privátní degustace pro členy — Toskánsko v šesti sklenkách a jeden večer, který se protáhl.</p>
+          <div class="s-card__meta">
+            <span><svg viewBox="0 0 24 24"><path d="M12 20.5c-4.7-3.2-8.5-6.4-8.5-10.2A4.6 4.6 0 0 1 8.1 5.6c1.6 0 3.1.9 3.9 2.3.8-1.4 2.3-2.3 3.9-2.3a4.6 4.6 0 0 1 4.6 4.7c0 3.8-3.8 7-8.5 10.2z"/></svg>458</span>
+            <span><svg viewBox="0 0 24 24"><path d="M21 11.5c0 4.1-4 7.5-9 7.5-1 0-2-.1-2.9-.4L4 20l1.2-3.6C3.8 15.1 3 13.4 3 11.5 3 7.4 7 4 12 4s9 3.4 9 7.5z"/></svg>29</span>
+          </div>
+          <a class="link-arrow s-card__cta" href="https://www.instagram.com/bebirdie.cz/" target="_blank" rel="noopener">Zobrazit post <span class="arr">↗</span></a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 09 · POZVÁNKA ============ -->
+<section class="invite" data-theme="ink" id="pozvanka" aria-label="Pozvánka">
+  <div class="container">
+    <p class="kicker" data-reveal style="color:var(--gold)"><span class="num">09</span> Pozvánka</p>
+    <h2 class="display split-lines" id="inviteTitle">Některé kruhy se nerozšiřují náhodou.</h2>
+    <div class="invite__actions" data-reveal>
+      <a class="btn btn--solid" href="klub.html"><span class="lbl"><span>Požádat o členství</span><span>Požádat o členství</span></span></a>
+      <a class="link-arrow" href="kontakt.html">Napište nám <span class="arr">↗</span></a>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer" data-theme="ink">
+  <div class="container">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <a class="brand brand--lg" href="index.html" aria-label="BeBirdie — domů">
+          <svg class="brand__icon" viewBox="0 0 100 100" aria-hidden="true"><use href="#bb-logo"/></svg>
+          <span class="brand__word">BeBirdie</span>
+        </a>
+        <p>Propojujeme svět sportu, osobního rozvoje a lifestylu. Buď, kým chceš.</p>
+        <div class="contact">
+          <a href="mailto:bebirdie@bebirdie.cz">bebirdie@bebirdie.cz</a>
+          <a href="tel:+420606790905">+420 606 790 905</a>
+        </div>
+        <div class="footer__soc">
+          <a href="https://www.instagram.com/bebirdie.cz/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24"><use href="#ic-ig"/></svg></a>
+          <a href="https://www.facebook.com/bebirdie.cz" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M13.5 21v-8h2.7l.4-3.1h-3.1V7.9c0-.9.3-1.5 1.6-1.5h1.6V3.6c-.3 0-1.2-.1-2.3-.1-2.3 0-3.9 1.4-3.9 4v2.4H7.8V13h2.7v8h3z"/></svg></a>
+          <a href="https://www.linkedin.com/company/bebirdie" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M6.5 8.8H3.6V21h2.9V8.8zM5 7.4a1.7 1.7 0 1 0 0-3.4 1.7 1.7 0 0 0 0 3.4zM21 14.3c0-3.3-1.8-4.9-4.1-4.9-1.9 0-2.7 1-3.2 1.8V8.8h-2.9V21h2.9v-6.5c0-1.7.8-2.7 2.2-2.7 1.3 0 2.1.9 2.1 2.7V21H21v-6.7z"/></svg></a>
+        </div>
+      </div>
+      <div>
+        <h5>Klub</h5>
+        <ul>
+          <li><a href="klub.html">Členství</a></li>
+          <li><a href="o-nas.html">O nás</a></li>
+          <li><a href="partneri.html">Partneři</a></li>
+          <li><a href="galerie.html">Fotogalerie</a></li>
+          <li><a href="kontakt.html">Kontakt</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Program</h5>
+        <ul>
+          <li><a href="kalendar.html">Kalendář akcí</a></li>
+          <li><a href="tour.html">Tour 2026</a></li>
+          <li><a href="vzdelavani.html">Vzdělávání</a></li>
+          <li><a href="ai-kurzy.html">AI kurzy</a></li>
+          <li><a href="tabory.html">Tábory pro děti</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Obchod</h5>
+        <ul>
+          <li><a href="obchod.html">Vína</a></li>
+          <li><a href="obchod.html#poukazy">Dárkové poukazy</a></li>
+          <li><a href="oblibene.html">Oblíbené</a></li>
+          <li><a href="kosik.html">Košík</a></li>
+          <li><a href="clenska-zona.html">Členská zóna</a></li>
+        </ul>
+      </div>
+      <div class="footer__news">
+        <h5>Občasník klubu</h5>
+        <p>Jednou měsíčně, žádný spam. Jen to, co se chystá.</p>
+        <form class="field" data-form>
+          <input type="email" placeholder="Váš e-mail" aria-label="Váš e-mail" required>
+          <button type="submit">Odeslat →</button>
+        </form>
+        <div class="form__success" data-success style="display:none;background:transparent;border:none;padding:.6rem 0;text-align:left">
+          <p style="color:var(--gold-soft)">Děkujeme. Jste na seznamu.</p>
+        </div>
+        <p class="footer__consent">Odesláním souhlasíte s <a href="soukromi.html">podmínkami ochrany osobních údajů</a>.</p>
+      </div>
+    </div>
+    <div class="footer__legal">
+      <span>© 2026 BeBirdie. Všechna práva vyhrazena.</span>
+      <div class="row">
+        <a href="podminky.html">Obchodní podmínky</a>
+        <a href="soukromi.html">Ochrana osobních údajů</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<div class="event-float" id="eventFloat" aria-hidden="true"><img src="" alt=""></div>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+<script src="https://unpkg.com/lenis@1.1.14/dist/lenis.min.js"></script>
+<script src="https://unpkg.com/split-type@0.3.4/umd/index.min.js"></script>
+<script src="assets/main.js"></script>
+</body>
+</html>
