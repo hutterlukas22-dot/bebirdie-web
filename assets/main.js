@@ -106,10 +106,9 @@ var overlayHTML =
         accGroup('02', 'Golfové túry', [['Přehled túr', 'tury.html'], ['Prestižní túry', 'prestizni-tury.html'], ['Zájezdy & výlety', 'zajezdy.html'], ['Partnerská hřiště', 'partnerska-hriste.html']]) +
         accGroup('03', 'Shop', [['Víno', 'vino.html'], ['Oblečení & boty', 'obleceni.html'], ['Šperky & doplňky', 'sperky.html'], ['Dárkové poukazy', 'poukazy.html']]) +
         accGroup('04', 'Vzdělávání', [['Kurzy AI', 'ai-kurzy.html'], ['Marketing', 'marketing.html'], ['Byznys rozvoj', 'byznys-rozvoj.html'], ['Naši lektoři', 'lektori.html']]) +
-        '<li><a class="menu__solo" href="clenska-zona.html"><span class="idx">05</span>Členská zóna</a></li>' +
+        '<li><a class="menu__solo" href="o-nas.html"><span class="idx">05</span>O nás</a></li>' +
         '<li><a class="menu__solo" href="partneri.html"><span class="idx">06</span>Partneři</a></li>' +
-        '<li><a class="menu__solo" href="o-nas.html"><span class="idx">07</span>O nás</a></li>' +
-        '<li><a class="menu__solo" href="kontakt.html"><span class="idx">08</span>Kontakt</a></li>' +
+        '<li><a class="menu__solo" href="kontakt.html"><span class="idx">07</span>Kontakt</a></li>' +
       '</ul>' +
       '<div class="menu__aside">' +
         '<h5>Váš účet</h5>' +

@@ -67,9 +67,9 @@ const nav = (dark) => `<header class="nav${dark ? ' nav--dark' : ''}" id="nav">
         <li class="has-mega"><button class="nav__link" data-mega="tury" aria-expanded="false" aria-haspopup="true">Golfové túry${CHEV}</button></li>
         <li class="has-mega"><button class="nav__link" data-mega="shop" aria-expanded="false" aria-haspopup="true">Shop${CHEV}</button></li>
         <li class="has-mega"><button class="nav__link" data-mega="vzdelavani" aria-expanded="false" aria-haspopup="true">Vzdělávání${CHEV}</button></li>
-        <li><a class="nav__link" href="clenska-zona.html">Členská zóna</a></li>
-        <li><a class="nav__link" href="partneri.html">Partneři</a></li>
         <li><a class="nav__link" href="o-nas.html">O nás</a></li>
+        <li><a class="nav__link" href="partneri.html">Partneři</a></li>
+        <li><a class="nav__link" href="kontakt.html">Kontakt</a></li>
       </ul>
     </nav>
     <div class="nav__right">
