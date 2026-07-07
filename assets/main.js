@@ -12,11 +12,17 @@ var PRODUCTS = {
   'la-pieve':   { name: 'La Pieve', sub: 'Toskánsko · Itálie', price: 269, img: 'https://images.unsplash.com/photo-1506377247377-2a5b3b417ebb?w=400&q=70&auto=format&fit=crop', url: 'produkt-la-pieve.html' },
   'i-pecorari': { name: 'I Pecorari', sub: 'Friuli · Itálie', price: 239, img: 'https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=400&q=70&auto=format&fit=crop', url: 'produkt-i-pecorari.html' },
   'casal':      { name: 'Casal da Coelheira 2022', sub: 'Tejo · Portugalsko', price: 220, img: 'https://images.unsplash.com/photo-1474722883778-792e7990302f?w=400&q=70&auto=format&fit=crop', url: 'produkt-casal.html' },
-  'poukaz-2000': { name: 'Dárkový poukaz 2 000 Kč', sub: 'Elektronicky i tištěný', price: 2000, img: '', url: 'obchod.html#poukazy' },
-  'poukaz-4000': { name: 'Dárkový poukaz 4 000 Kč', sub: 'Elektronicky i tištěný', price: 4000, img: '', url: 'obchod.html#poukazy' },
-  'poukaz-6000': { name: 'Dárkový poukaz 6 000 Kč', sub: 'Elektronicky i tištěný', price: 6000, img: '', url: 'obchod.html#poukazy' },
-  'poukaz-8000': { name: 'Dárkový poukaz 8 000 Kč', sub: 'Elektronicky i tištěný', price: 8000, img: '', url: 'obchod.html#poukazy' },
-  'tabor':      { name: 'Sportovní příměstský tábor', sub: 'Rohanský ostrov · 6–13 let', price: 6900, img: 'https://images.unsplash.com/photo-1535131749006-b7f58c99034b?w=400&q=70&auto=format&fit=crop', url: 'tabory.html' }
+  'poukaz-2000': { name: 'Dárkový poukaz 2 000 Kč', sub: 'Elektronicky i tištěný', price: 2000, img: '', url: 'poukazy.html' },
+  'poukaz-4000': { name: 'Dárkový poukaz 4 000 Kč', sub: 'Elektronicky i tištěný', price: 4000, img: '', url: 'poukazy.html' },
+  'poukaz-6000': { name: 'Dárkový poukaz 6 000 Kč', sub: 'Elektronicky i tištěný', price: 6000, img: '', url: 'poukazy.html' },
+  'poukaz-8000': { name: 'Dárkový poukaz 8 000 Kč', sub: 'Elektronicky i tištěný', price: 8000, img: '', url: 'poukazy.html' },
+  'tabor':      { name: 'Sportovní příměstský tábor', sub: 'Rohanský ostrov · 6–13 let', price: 6900, img: 'https://images.unsplash.com/photo-1535131749006-b7f58c99034b?w=400&q=70&auto=format&fit=crop', url: 'tabory.html' },
+  'polo':       { name: 'Klubové polo BeBirdie', sub: 'Klubová kolekce · pima bavlna', price: 1490, img: 'https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=400&q=70&auto=format&fit=crop', url: 'produkt-polo.html' },
+  'svetr':      { name: 'Merino svetr BeBirdie', sub: 'Klubová kolekce · merino', price: 2990, img: 'https://images.unsplash.com/photo-1434389677669-e08b4cac3105?w=400&q=70&auto=format&fit=crop', url: 'produkt-svetr.html' },
+  'obuv':       { name: 'Klubová golfová obuv', sub: 'Limitovaná edice', price: 4490, img: 'https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=400&q=70&auto=format&fit=crop', url: 'produkt-obuv.html' },
+  'marker':     { name: 'Stříbrný ball marker', sub: 'Stříbro 925 · gravírování', price: 2490, img: 'https://images.unsplash.com/photo-1523170335258-f5ed11844a49?w=400&q=70&auto=format&fit=crop', url: 'produkt-marker.html' },
+  'knoflicky':  { name: 'Manžetové knoflíčky Birdie', sub: 'Mosaz · zlacení', price: 3990, img: 'https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=400&q=70&auto=format&fit=crop', url: 'produkt-knoflicky.html' },
+  'pouzdro':    { name: 'Kožené pouzdro na skórkartu', sub: 'Italská kůže · personalizace', price: 1990, img: 'https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=400&q=70&auto=format&fit=crop', url: 'produkt-pouzdro.html' }
 };
 
 var SEARCH_INDEX = [
@@ -39,9 +45,28 @@ var SEARCH_INDEX = [
   { t: 'La Pieve', c: 'Vinotéka · 269 Kč', u: 'produkt-la-pieve.html' },
   { t: 'I Pecorari', c: 'Vinotéka · 239 Kč', u: 'produkt-i-pecorari.html' },
   { t: 'Casal da Coelheira 2022', c: 'Vinotéka · 220 Kč', u: 'produkt-casal.html' },
-  { t: 'Dárkové poukazy', c: 'Obchod', u: 'obchod.html#poukazy' },
+  { t: 'Dárkové poukazy', c: 'Shop', u: 'poukazy.html' },
   { t: 'Příměstské tábory', c: 'Golf pro děti', u: 'tabory.html' },
-  { t: 'Obchod', c: 'Vína · poukazy · tábory', u: 'obchod.html' },
+  { t: 'Shop — vše', c: 'Vína · kolekce · dárky', u: 'obchod.html' },
+  { t: 'Víno', c: 'Výběr sommeliera', u: 'vino.html' },
+  { t: 'Oblečení & boty', c: 'Klubová kolekce', u: 'obleceni.html' },
+  { t: 'Šperky & doplňky', c: 'Shop', u: 'sperky.html' },
+  { t: 'Open Tour 2026', c: 'Deset hřišť, jedno pořadí', u: 'open-tour.html' },
+  { t: 'Speciální turnaje', c: 'Miss Golf, Texas Cup…', u: 'specialni-turnaje.html' },
+  { t: 'Žebříček Open Tour', c: 'Průběžné pořadí 2026', u: 'zebricek.html' },
+  { t: 'Přehled golfových túr', c: 'Golfové túry', u: 'tury.html' },
+  { t: 'Prestižní túry', c: 'Golfové túry', u: 'prestizni-tury.html' },
+  { t: 'Zájezdy & výlety', c: 'Golfové túry', u: 'zajezdy.html' },
+  { t: 'Partnerská hřiště', c: 'Golfové túry', u: 'partnerska-hriste.html' },
+  { t: 'Marketing — kurz', c: 'Vzdělávání', u: 'marketing.html' },
+  { t: 'Byznys rozvoj', c: 'Vzdělávání', u: 'byznys-rozvoj.html' },
+  { t: 'Naši lektoři', c: 'Vzdělávání', u: 'lektori.html' },
+  { t: 'Klubové polo BeBirdie', c: 'Shop · 1 490 Kč', u: 'produkt-polo.html' },
+  { t: 'Merino svetr BeBirdie', c: 'Shop · 2 990 Kč', u: 'produkt-svetr.html' },
+  { t: 'Klubová golfová obuv', c: 'Shop · 4 490 Kč', u: 'produkt-obuv.html' },
+  { t: 'Stříbrný ball marker', c: 'Shop · 2 490 Kč', u: 'produkt-marker.html' },
+  { t: 'Manžetové knoflíčky Birdie', c: 'Shop · 3 990 Kč', u: 'produkt-knoflicky.html' },
+  { t: 'Kožené pouzdro na skórkartu', c: 'Shop · 1 990 Kč', u: 'produkt-pouzdro.html' },
   { t: 'Fotogalerie z turnajů', c: 'Galerie', u: 'galerie.html' },
   { t: 'Partneři klubu', c: 'O nás', u: 'partneri.html' },
   { t: 'O nás', c: 'Klub', u: 'o-nas.html' },
@@ -61,27 +86,37 @@ function czk(n) { return n.toLocaleString('cs-CZ') + ' Kč'; }
 /* ================= OVERLAY SHELL ================= */
 var iconHeart = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20.5c-4.7-3.2-8.5-6.4-8.5-10.2A4.6 4.6 0 0 1 8.1 5.6c1.6 0 3.1.9 3.9 2.3.8-1.4 2.3-2.3 3.9-2.3a4.6 4.6 0 0 1 4.6 4.7c0 3.8-3.8 7-8.5 10.2z"/></svg>';
 
+function accGroup(idx, label, links) {
+  return '<li class="acc"><button class="acc__head" aria-expanded="false"><span class="idx">' + idx + '</span>' + label +
+    '<span class="acc__x" aria-hidden="true"></span></button><ul class="acc__body">' +
+    links.map(function (l) { return '<li><a href="' + l[1] + '">' + l[0] + '</a></li>'; }).join('') +
+    '</ul></li>';
+}
 var overlayHTML =
 '<div class="ovl" id="ovlMenu" aria-hidden="true">' +
   '<div class="ovl__bg" data-close></div>' +
   '<div class="menu__panel" role="dialog" aria-modal="true" aria-label="Menu">' +
     '<div class="menu__head">' +
-      '<span class="brand"><svg class="brand__icon" viewBox="0 0 100 100" aria-hidden="true"><use href="#bb-logo"/></svg><span class="brand__word">BeBirdie</span></span>' +
+      '<a class="brand" href="index.html" aria-label="BeBirdie — domů"><svg class="brand__logo" viewBox="0 0 181 46" aria-hidden="true" focusable="false"><use href="#bb-logo"/></svg></a>' +
       '<button class="ovl__close" data-close aria-label="Zavřít menu">✕</button>' +
     '</div>' +
     '<nav class="menu__body" aria-label="Hlavní menu">' +
       '<ul class="menu__main">' +
-        '<li><a href="kalendar.html"><span class="idx">01</span>Kalendář akcí</a></li>' +
-        '<li><a href="tour.html"><span class="idx">02</span>Tour 2026</a></li>' +
-        '<li><a href="vzdelavani.html"><span class="idx">03</span>Vzdělávání</a></li>' +
-        '<li><a href="klub.html"><span class="idx">04</span>Klub &amp; členství</a></li>' +
-        '<li><a href="obchod.html"><span class="idx">05</span>Obchod</a></li>' +
+        accGroup('01', 'Akce', [['Kalendář akcí', 'kalendar.html'], ['BeBirdie Tour', 'tour.html'], ['Open Tour', 'open-tour.html'], ['Speciální turnaje', 'specialni-turnaje.html'], ['Žebříček', 'zebricek.html']]) +
+        accGroup('02', 'Golfové túry', [['Přehled túr', 'tury.html'], ['Prestižní túry', 'prestizni-tury.html'], ['Zájezdy & výlety', 'zajezdy.html'], ['Partnerská hřiště', 'partnerska-hriste.html']]) +
+        accGroup('03', 'Shop', [['Víno', 'vino.html'], ['Oblečení & boty', 'obleceni.html'], ['Šperky & doplňky', 'sperky.html'], ['Dárkové poukazy', 'poukazy.html']]) +
+        accGroup('04', 'Vzdělávání', [['Kurzy AI', 'ai-kurzy.html'], ['Marketing', 'marketing.html'], ['Byznys rozvoj', 'byznys-rozvoj.html'], ['Naši lektoři', 'lektori.html']]) +
+        '<li><a class="menu__solo" href="clenska-zona.html"><span class="idx">05</span>Členská zóna</a></li>' +
+        '<li><a class="menu__solo" href="partneri.html"><span class="idx">06</span>Partneři</a></li>' +
+        '<li><a class="menu__solo" href="o-nas.html"><span class="idx">07</span>O nás</a></li>' +
+        '<li><a class="menu__solo" href="kontakt.html"><span class="idx">08</span>Kontakt</a></li>' +
       '</ul>' +
       '<div class="menu__aside">' +
-        '<h5>Klub</h5>' +
-        '<ul><li><a href="o-nas.html">O nás</a></li><li><a href="partneri.html">Partneři</a></li><li><a href="galerie.html">Fotogalerie</a></li><li><a href="tabory.html">Příměstské tábory</a></li><li><a href="kontakt.html">Kontakt</a></li></ul>' +
         '<h5>Váš účet</h5>' +
         '<ul><li><a href="clenska-zona.html">Členská zóna</a></li><li><a href="oblibene.html">Oblíbené</a></li><li><a href="kosik.html">Košík</a></li></ul>' +
+        '<h5>Klub</h5>' +
+        '<ul><li><a href="klub.html">Klub &amp; členství</a></li><li><a href="galerie.html">Fotogalerie</a></li><li><a href="tabory.html">Tábory pro děti</a></li></ul>' +
+        '<a class="btn btn--solid menu__cta" href="klub.html"><span class="lbl"><span>Požádat o členství</span><span>Požádat o členství</span></span></a>' +
       '</div>' +
     '</nav>' +
   '</div>' +
@@ -314,6 +349,166 @@ function onScrollNav() {
   nav.classList.toggle('nav--solid', y > 60);
 }
 window.addEventListener('scroll', onScrollNav, { passive: true });
+
+/* mobile menu accordion */
+document.addEventListener('click', function (e) {
+  var head = e.target.closest('.acc__head');
+  if (!head) return;
+  var li = head.parentElement;
+  var wasOpen = li.classList.contains('open');
+  document.querySelectorAll('.acc.open').forEach(function (x) {
+    x.classList.remove('open');
+    x.querySelector('.acc__head').setAttribute('aria-expanded', 'false');
+  });
+  if (!wasOpen) { li.classList.add('open'); head.setAttribute('aria-expanded', 'true'); }
+});
+
+/* ================= MEGA MENU ================= */
+var MEGA = {
+  akce: {
+    kicker: 'Akce', title: 'Sezóna 2026 právě běží', desc: 'Čtrnáct turnajů, zájezdy za golfem a formáty, které jinde nezažijete.',
+    cta: ['Celý kalendář akcí', 'kalendar.html'],
+    links: [
+      ['Kalendář akcí', 'kalendar.html', 'Kompletní program sezóny'],
+      ['BeBirdie Tour', 'tour.html', 'Prestižní celoroční série'],
+      ['Open Tour', 'open-tour.html', 'Deset hřišť, jedno pořadí'],
+      ['Speciální turnaje', 'specialni-turnaje.html', 'Miss Golf, Texas Cup a další'],
+      ['Žebříček', 'zebricek.html', 'Průběžné pořadí Open Tour']
+    ],
+    feature: { img: 'https://images.unsplash.com/photo-1535131749006-b7f58c99034b?w=800&q=70&auto=format&fit=crop', warm: true, tag: 'Nejbližší akce', t: 'Open Tour — Golf Konopiště · 11. 7.', url: 'akce-konopiste.html' }
+  },
+  tury: {
+    kicker: 'Golfové túry', title: 'Golf, který stojí za cestu', desc: 'Od prestižní celoroční Tour po víkendové výlety vlakem pod Tatry.',
+    cta: ['Přehled všech túr', 'tury.html'],
+    links: [
+      ['Přehled túr', 'tury.html', 'Vše na jednom místě'],
+      ['Prestižní túry', 'prestizni-tury.html', 'Tour pro uzavřenou skupinu'],
+      ['Zájezdy & výlety', 'zajezdy.html', 'Black Stork, roadtripy, víkendy'],
+      ['Partnerská hřiště', 'partnerska-hriste.html', 'Kde všude hrajeme']
+    ],
+    feature: { img: 'https://images.unsplash.com/photo-1528605248644-14dd04022da1?w=800&q=70&auto=format&fit=crop', tag: 'Zájezd léta', t: 'Golf Train Cup — Black Stork', url: 'akce-train-cup.html' }
+  },
+  shop: {
+    kicker: 'Shop', title: 'Obchod pro dobrý vkus', desc: 'Vína od sommeliera, klubová kolekce a dárky, které potěší.',
+    cta: ['Celý shop', 'obchod.html'],
+    links: [
+      ['Víno', 'vino.html', 'Výběr sommeliera'],
+      ['Oblečení & boty', 'obleceni.html', 'Klubová kolekce'],
+      ['Šperky & doplňky', 'sperky.html', 'Detaily, které hrají'],
+      ['Dárkové poukazy', 'poukazy.html', 'Darujte zážitek']
+    ],
+    feature: { img: 'https://images.unsplash.com/photo-1474722883778-792e7990302f?w=800&q=70&auto=format&fit=crop', tag: 'Z vinotéky', t: 'Casal da Coelheira 2022', url: 'produkt-casal.html' }
+  },
+  vzdelavani: {
+    kicker: 'Vzdělávání', title: 'Rostěte rychleji než konkurence', desc: 'Praktické kurzy s lektory z praxe — od AI po byznys rozvoj.',
+    cta: ['Vše o vzdělávání', 'vzdelavani.html'],
+    links: [
+      ['Kurzy AI', 'ai-kurzy.html', 'Delegujte na umělou inteligenci'],
+      ['Marketing', 'marketing.html', 'Kampaně, které prodávají'],
+      ['Byznys rozvoj', 'byznys-rozvoj.html', 'Mastermind pro majitele firem'],
+      ['Naši lektoři', 'lektori.html', 'Lidé z praxe, ne z prezentací']
+    ],
+    feature: { img: 'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=800&q=70&auto=format&fit=crop', tag: 'Nejbližší termín', t: 'AI pro byznys lídry · 18. 9.', url: 'ai-kurzy.html' }
+  }
+};
+
+(function initMega() {
+  if (!nav || !document.querySelector('[data-mega]')) return;
+  var backdrop = document.createElement('div');
+  backdrop.className = 'mega-backdrop';
+  document.body.appendChild(backdrop);
+
+  Object.keys(MEGA).forEach(function (key) {
+    var m = MEGA[key];
+    var panel = document.createElement('div');
+    panel.className = 'mega';
+    panel.id = 'mega-' + key;
+    panel.setAttribute('role', 'region');
+    panel.setAttribute('aria-label', m.kicker);
+    panel.innerHTML =
+      '<div class="mega__inner">' +
+        '<div class="mega__intro">' +
+          '<p class="kicker">' + m.kicker + '</p>' +
+          '<p class="mega__title">' + m.title + '</p>' +
+          '<p class="mega__desc">' + m.desc + '</p>' +
+          '<a class="link-arrow" href="' + m.cta[1] + '">' + m.cta[0] + ' <span class="arr">↗</span></a>' +
+        '</div>' +
+        '<ul class="mega__links">' + m.links.map(function (l) {
+          return '<li><a href="' + l[1] + '"><span class="t">' + l[0] + '</span><span class="d">' + l[2] + '</span><span class="a">→</span></a></li>';
+        }).join('') + '</ul>' +
+        '<a class="mega__feature" href="' + m.feature.url + '">' +
+          '<span class="ph"><img' + (m.feature.warm ? ' class="ph-warm"' : '') + ' src="' + m.feature.img + '" alt="" loading="lazy" onerror="this.style.display=\'none\'">' +
+          '<span class="mega__feature-tag">' + m.feature.tag + '</span></span>' +
+          '<span class="mega__feature-t">' + m.feature.t + '<span class="a">→</span></span>' +
+        '</a>' +
+      '</div>';
+    nav.appendChild(panel);
+  });
+
+  var openKey = null, hideTimer = null;
+  function megaBtn(key) { return nav.querySelector('[data-mega="' + key + '"]'); }
+  function showMega(key) {
+    clearTimeout(hideTimer);
+    if (openKey === key) return;
+    if (openKey) {
+      document.getElementById('mega-' + openKey).classList.remove('open');
+      megaBtn(openKey).setAttribute('aria-expanded', 'false');
+    }
+    openKey = key;
+    var panel = document.getElementById('mega-' + key);
+    panel.classList.add('open');
+    megaBtn(key).setAttribute('aria-expanded', 'true');
+    nav.classList.add('nav--mega');
+    backdrop.classList.add('on');
+    if (window.gsap && !reduced) {
+      gsap.fromTo(panel.querySelectorAll('.mega__intro, .mega__links li, .mega__feature'),
+        { y: 14, opacity: 0 },
+        { y: 0, opacity: 1, duration: 0.5, ease: 'expo.out', stagger: 0.035, overwrite: true, clearProps: 'opacity,transform' });
+    }
+  }
+  function hideMega() {
+    if (!openKey) return;
+    document.getElementById('mega-' + openKey).classList.remove('open');
+    megaBtn(openKey).setAttribute('aria-expanded', 'false');
+    openKey = null;
+    nav.classList.remove('nav--mega');
+    backdrop.classList.remove('on');
+  }
+  function scheduleHide() { clearTimeout(hideTimer); hideTimer = setTimeout(hideMega, 170); }
+
+  document.querySelectorAll('.has-mega').forEach(function (li) {
+    var btn = li.querySelector('[data-mega]');
+    var key = btn.getAttribute('data-mega');
+    if (!isTouch) {
+      li.addEventListener('mouseenter', function () { if (window.innerWidth > 1199) showMega(key); });
+      li.addEventListener('mouseleave', scheduleHide);
+    }
+    btn.addEventListener('click', function (e) {
+      e.preventDefault();
+      if (openKey === key) hideMega(); else showMega(key);
+    });
+  });
+  Object.keys(MEGA).forEach(function (key) {
+    var panel = document.getElementById('mega-' + key);
+    panel.addEventListener('mouseenter', function () { clearTimeout(hideTimer); });
+    panel.addEventListener('mouseleave', scheduleHide);
+  });
+  backdrop.addEventListener('click', hideMega);
+  window.addEventListener('scroll', hideMega, { passive: true });
+  window.addEventListener('resize', hideMega);
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') hideMega(); });
+  document.addEventListener('focusin', function (e) { if (openKey && !nav.contains(e.target)) hideMega(); });
+
+  /* active state: highlight group containing current page */
+  var here = (location.pathname.split('/').pop() || 'index.html');
+  document.querySelectorAll('.nav__links a.nav__link').forEach(function (a) {
+    if (a.getAttribute('href') === here) a.classList.add('is-active');
+  });
+  Object.keys(MEGA).forEach(function (key) {
+    var inGroup = MEGA[key].links.some(function (l) { return l[1] === here; });
+    if (inGroup) megaBtn(key).classList.add('is-active');
+  });
+})();
 
 /* ================= MOTION ================= */
 if (!reduced && window.gsap) {
