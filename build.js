@@ -592,7 +592,7 @@ pages.push({
 /* ---- vzdelavani ---- */
 pages.push({
   file: 'vzdelavani.html', title: 'Vzdělávání', desc: 'Praktické kurzy AI, marketingu a byznys rozvoje pro podnikatele a lídry.',
-  body: hero({ kicker: 'Vzdělávání', title: 'Rostěte rychleji než konkurence', crumb: [['Domů', 'index.html'], ['Vzdělávání', '']],
+  body: hero({ kicker: 'Vzdělávání', title: 'Rosťte rychleji než konkurence', crumb: [['Domů', 'index.html'], ['Vzdělávání', '']],
     lede: 'Posouváme vás v kariéře skrze praktické kurzy — od umělé inteligence po byznys rozvoj. Vedou je lektoři z praxe, ne z prezentací.' }) +
   `<section class="page-body" data-theme="ivory"><div class="container">
     <div class="edu__grid" style="margin-bottom:var(--space-xl)">

@@ -400,7 +400,7 @@ var MEGA = {
     feature: { img: 'https://images.unsplash.com/photo-1474722883778-792e7990302f?w=800&q=70&auto=format&fit=crop', tag: 'Z vinotéky', t: 'Casal da Coelheira 2022', url: 'produkt-casal.html' }
   },
   vzdelavani: {
-    kicker: 'Vzdělávání', title: 'Rostěte rychleji než konkurence', desc: 'Praktické kurzy s lektory z praxe — od AI po byznys rozvoj.',
+    kicker: 'Vzdělávání', title: 'Rosťte rychleji než konkurence', desc: 'Praktické kurzy s lektory z praxe — od AI po byznys rozvoj.',
     cta: ['Vše o vzdělávání', 'vzdelavani.html'],
     links: [
       ['Kurzy AI', 'ai-kurzy.html', 'Delegujte na umělou inteligenci'],
