@@ -9,21 +9,23 @@ if (reduced) document.body.classList.add('reduced');
 
 /* ================= DATA ================= */
 var PRODUCTS = {
-  'la-pieve':   { name: 'La Pieve', sub: 'Toskánsko · Itálie', price: 269, img: 'https://images.unsplash.com/photo-1506377247377-2a5b3b417ebb?w=400&q=70&auto=format&fit=crop', url: 'produkt-la-pieve.html' },
-  'i-pecorari': { name: 'I Pecorari', sub: 'Friuli · Itálie', price: 239, img: 'https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=400&q=70&auto=format&fit=crop', url: 'produkt-i-pecorari.html' },
-  'casal':      { name: 'Casal da Coelheira 2022', sub: 'Tejo · Portugalsko', price: 220, img: 'https://images.unsplash.com/photo-1474722883778-792e7990302f?w=400&q=70&auto=format&fit=crop', url: 'produkt-casal.html' },
-  'poukaz-2000': { name: 'Dárkový poukaz 2 000 Kč', sub: 'Elektronicky i tištěný', price: 2000, img: '', url: 'poukazy.html' },
-  'poukaz-4000': { name: 'Dárkový poukaz 4 000 Kč', sub: 'Elektronicky i tištěný', price: 4000, img: '', url: 'poukazy.html' },
-  'poukaz-6000': { name: 'Dárkový poukaz 6 000 Kč', sub: 'Elektronicky i tištěný', price: 6000, img: '', url: 'poukazy.html' },
-  'poukaz-8000': { name: 'Dárkový poukaz 8 000 Kč', sub: 'Elektronicky i tištěný', price: 8000, img: '', url: 'poukazy.html' },
-  'tabor':      { name: 'Sportovní příměstský tábor', sub: 'Rohanský ostrov · 6–13 let', price: 6900, img: 'https://images.unsplash.com/photo-1535131749006-b7f58c99034b?w=400&q=70&auto=format&fit=crop', url: 'tabory.html' },
-  'polo':       { name: 'Klubové polo BeBirdie', sub: 'Klubová kolekce · pima bavlna', price: 1490, img: 'https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=400&q=70&auto=format&fit=crop', url: 'produkt-polo.html' },
-  'svetr':      { name: 'Merino svetr BeBirdie', sub: 'Klubová kolekce · merino', price: 2990, img: 'https://images.unsplash.com/photo-1434389677669-e08b4cac3105?w=400&q=70&auto=format&fit=crop', url: 'produkt-svetr.html' },
-  'obuv':       { name: 'Klubová golfová obuv', sub: 'Limitovaná edice', price: 4490, img: 'https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=400&q=70&auto=format&fit=crop', url: 'produkt-obuv.html' },
-  'marker':     { name: 'Stříbrný ball marker', sub: 'Stříbro 925 · gravírování', price: 2490, img: 'https://images.unsplash.com/photo-1523170335258-f5ed11844a49?w=400&q=70&auto=format&fit=crop', url: 'produkt-marker.html' },
-  'knoflicky':  { name: 'Manžetové knoflíčky Birdie', sub: 'Mosaz · zlacení', price: 3990, img: 'https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=400&q=70&auto=format&fit=crop', url: 'produkt-knoflicky.html' },
-  'pouzdro':    { name: 'Kožené pouzdro na skórkartu', sub: 'Italská kůže · personalizace', price: 1990, img: 'https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=400&q=70&auto=format&fit=crop', url: 'produkt-pouzdro.html' }
+  'la-pieve':   { name: 'La Pieve', sub: 'Toskánsko · Itálie', price: 269, oldPrice: 339, badge: '−20 %', sale: true, cat: 'vino', note: 'Sangiovese s tichým, přesným finišem — víno na dlouhé rozhovory.', img: 'https://images.unsplash.com/photo-1506377247377-2a5b3b417ebb?w=700&q=72&auto=format&fit=crop', url: 'produkt-la-pieve.html' },
+  'i-pecorari': { name: 'I Pecorari', sub: 'Friuli · Itálie', price: 239, cat: 'vino', note: 'Svěží, minerální, sebevědomé. Láhev, kterou otevíráte pro hosty.', img: 'https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=700&q=72&auto=format&fit=crop', url: 'produkt-i-pecorari.html' },
+  'casal':      { name: 'Casal da Coelheira 2022', sub: 'Tejo · Portugalsko', price: 220, badge: 'Červené', cat: 'vino', note: 'Plné, hřejivé, s dlouhým závěrem. K večeru u krbu i k jednání.', img: 'https://images.unsplash.com/photo-1474722883778-792e7990302f?w=700&q=72&auto=format&fit=crop', url: 'produkt-casal.html' },
+  'poukaz-2000': { name: 'Dárkový poukaz 2 000 Kč', sub: 'Elektronicky i tištěný', price: 2000, cat: 'poukazy', note: 'Lze uplatnit na turnaje, kurzy i vína. Platí 12 měsíců.', img: '', url: 'poukazy.html' },
+  'poukaz-4000': { name: 'Dárkový poukaz 4 000 Kč', sub: 'Elektronicky i tištěný', price: 4000, cat: 'poukazy', note: 'Lze uplatnit na turnaje, kurzy i vína. Platí 12 měsíců.', img: '', url: 'poukazy.html' },
+  'poukaz-6000': { name: 'Dárkový poukaz 6 000 Kč', sub: 'Elektronicky i tištěný', price: 6000, cat: 'poukazy', note: 'Lze uplatnit na turnaje, kurzy i vína. Platí 12 měsíců.', img: '', url: 'poukazy.html' },
+  'poukaz-8000': { name: 'Dárkový poukaz 8 000 Kč', sub: 'Elektronicky i tištěný', price: 8000, cat: 'poukazy', note: 'Lze uplatnit na turnaje, kurzy i vína. Platí 12 měsíců.', img: '', url: 'poukazy.html' },
+  'tabor':      { name: 'Sportovní příměstský tábor', sub: 'Dětské tábory', price: 6900, cat: 'tabory', note: 'All-inclusive program pro děti 6–13 let na Rohanském ostrově. Golf s trenéry PGA a sport, který baví.', img: 'assets/tabor.jpg', url: 'tabory.html' },
+  'polo':       { name: 'Klubové polo BeBirdie', sub: 'Klubová kolekce', price: 1490, cat: 'obleceni', note: 'Pima bavlna, vyšitý birdie na hrudi. V barvách ivory a ink.', img: 'assets/produkt-polo.jpg', url: 'produkt-polo.html' },
+  'svetr':      { name: 'Merino svetr BeBirdie', sub: 'Klubová kolekce', price: 2990, cat: 'obleceni', note: 'Jemné merino na chladnější rána na greenu i do kanceláře.', img: 'https://images.unsplash.com/photo-1434389677669-e08b4cac3105?w=700&q=72&auto=format&fit=crop', url: 'produkt-svetr.html' },
+  'obuv':       { name: 'Klubová golfová obuv', sub: 'Limitovaná edice', price: 4490, badge: 'Limited', cat: 'obleceni', note: 'Kožený svršek, soft-spike podrážka. Číslovaná limitovaná série.', img: 'https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=700&q=72&auto=format&fit=crop', url: 'produkt-obuv.html' },
+  'marker':     { name: 'Stříbrný ball marker', sub: 'Šperky & doplňky', price: 2490, cat: 'sperky', note: 'Stříbro 925 s gravírováním iniciál. Dárek, který se neztratí.', img: 'https://images.unsplash.com/photo-1523170335258-f5ed11844a49?w=700&q=72&auto=format&fit=crop', url: 'produkt-marker.html' },
+  'knoflicky':  { name: 'Manžetové knoflíčky Birdie', sub: 'Šperky & doplňky', price: 3990, cat: 'sperky', note: 'Motiv birdie pro slavnostní večery. V klubové dárkové kazetě.', img: 'https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=700&q=72&auto=format&fit=crop', url: 'produkt-knoflicky.html' },
+  'pouzdro':    { name: 'Kožené pouzdro na skórkartu', sub: 'Šperky & doplňky', price: 1990, cat: 'sperky', note: 'Ručně šité z italské kůže, s personalizací ražbou.', img: 'https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=700&q=72&auto=format&fit=crop', url: 'produkt-pouzdro.html' }
 };
+/* pořadí „Vše" v eshopu — záměrně míchá kategorie */
+var SHOP_ORDER = ['la-pieve', 'svetr', 'poukaz-6000', 'polo', 'marker', 'i-pecorari', 'poukaz-4000', 'obuv', 'casal', 'knoflicky', 'pouzdro', 'poukaz-2000', 'poukaz-8000', 'tabor'];
 
 var SEARCH_INDEX = [
   { t: 'BeBirdie Open Tour — Golf Konopiště', c: 'Akce · 11. 7.', u: 'akce-konopiste.html' },
@@ -299,15 +301,68 @@ function renderWishPage() {
       '<a class="btn btn--ink" href="obchod.html"><span class="lbl"><span>Prozkoumat obchod</span><span>Prozkoumat obchod</span></span></a></div>';
     return;
   }
-  page.innerHTML = '<div class="wine__grid">' + wish.map(function (id) {
-    var p = PRODUCTS[id]; if (!p) return '';
-    return '<article class="wine-card">' +
-      '<a class="ph" href="' + p.url + '">' + (p.img ? '<img src="' + p.img + '" alt="' + p.name + '">' : '') + '</a>' +
-      '<button class="wish on" data-wish="' + id + '" aria-label="Odebrat z oblíbených">' + iconHeart + '</button>' +
-      '<h4><a href="' + p.url + '">' + p.name + '</a></h4><p class="origin">' + p.sub + '</p>' +
-      '<div class="row"><span class="price tnum">' + czk(p.price) + '</span><a class="add" href="#" data-add="' + id + '">Do košíku →</a></div></article>';
-  }).join('') + '</div>';
+  page.innerHTML = '<div class="shop-grid" style="margin-top:0">' + wish.map(pCard).join('') + '</div>';
+  renderWishButtons();
 }
+
+/* ================= SHOP GRID + FILTR ================= */
+var TAB_ICONS = {
+  vino: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.5 3h9l-.8 6.2a3.7 3.7 0 0 1-7.4 0L7.5 3z"/><path d="M12 13v6M8.5 21h7"/></svg>',
+  obleceni: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 4 4.5 6.8l1.7 3 1.8-.9V20h8v-11l1.8.9 1.7-3L15 4a3 3 0 0 1-6 0z"/></svg>',
+  sperky: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 4h8l3.5 4.8L12 20 4.5 8.8 8 4z"/><path d="M4.5 8.8h15M9.8 4 12 20 14.2 4"/></svg>',
+  poukazy: '<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="9.5" width="16" height="10.5" rx="1"/><path d="M4 13h16M12 9.5V20M12 9.5c-3.6 0-4.8-4.5-1.6-4.5 2.2 0 1.6 4.5 1.6 4.5zm0 0c3.6 0 4.8-4.5 1.6-4.5-2.2 0-1.6 4.5-1.6 4.5z"/></svg>',
+  tabory: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.5 21V3.5"/><path d="M6.5 4.5h10.5l-2.6 3.4 2.6 3.4H6.5"/><path d="M4 21h9"/></svg>'
+};
+document.querySelectorAll('.shop-tab[data-icon]').forEach(function (t) {
+  var ic = TAB_ICONS[t.getAttribute('data-icon')];
+  if (ic) t.insertAdjacentHTML('afterbegin', ic);
+});
+
+function pCard(id) {
+  var p = PRODUCTS[id]; if (!p) return '';
+  var media = p.img
+    ? '<img src="' + p.img + '" alt="' + p.name + '" loading="lazy" onerror="this.style.display=\'none\'">'
+    : '<span class="p-card__tile"><span style="text-align:center"><svg width="42" height="42" viewBox="0 0 46 46" style="margin:0 auto" aria-hidden="true"><use href="#bb-mark"/></svg><span class="val tnum">' + czk(p.price) + '</span></span></span>';
+  return '<article class="p-card">' +
+    '<a class="p-card__ph" href="' + p.url + '" tabindex="-1" aria-hidden="true">' + media +
+    (p.badge ? '<span class="p-card__badge' + (p.sale ? ' p-card__badge--sale' : '') + '">' + p.badge + '</span>' : '') + '</a>' +
+    '<button class="wish" data-wish="' + id + '" aria-label="Přidat ' + p.name + ' do oblíbených"></button>' +
+    '<h3 class="p-card__name"><a href="' + p.url + '">' + p.name + '</a></h3>' +
+    '<p class="p-card__cat">' + p.sub + '</p>' +
+    '<p class="p-card__note">' + (p.note || '') + '</p>' +
+    '<div class="p-card__row"><span class="p-card__price tnum">' + (p.oldPrice ? '<s>' + czk(p.oldPrice) + '</s>' : '') + czk(p.price) + '</span>' +
+    '<a class="p-card__add" href="' + p.url + '" data-add="' + id + '">Do košíku →</a></div>' +
+    '</article>';
+}
+function renderShopGrid(grid, cat) {
+  var limit = parseInt(grid.getAttribute('data-limit') || '0', 10);
+  var ids;
+  if (cat === 'all') {
+    var feat = grid.getAttribute('data-featured');
+    ids = (feat && limit) ? feat.split(',') : SHOP_ORDER.slice();
+  } else {
+    ids = SHOP_ORDER.filter(function (id) { return PRODUCTS[id].cat === cat; });
+  }
+  if (limit) ids = ids.slice(0, limit);
+  grid.innerHTML = ids.map(pCard).join('');
+  renderWishButtons();
+  if (window.gsap && !reduced) {
+    gsap.fromTo(grid.children, { y: 14, opacity: 0 },
+      { y: 0, opacity: 1, duration: 0.45, ease: 'expo.out', stagger: 0.05, overwrite: true, clearProps: 'opacity,transform' });
+  }
+}
+document.querySelectorAll('[data-shop-grid]').forEach(function (grid) {
+  renderShopGrid(grid, grid.getAttribute('data-cat') || 'all');
+});
+document.addEventListener('click', function (e) {
+  var tab = e.target.closest('button.shop-tab[data-cat]');
+  if (!tab) return;
+  var scope = tab.closest('section') || document;
+  scope.querySelectorAll('.shop-tab').forEach(function (t) { t.classList.remove('on'); });
+  tab.classList.add('on');
+  var grid = scope.querySelector('[data-shop-grid]');
+  if (grid) renderShopGrid(grid, tab.getAttribute('data-cat'));
+});
 
 /* ================= SEARCH ================= */
 function renderSearch(q) {

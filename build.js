@@ -261,6 +261,25 @@ const eventRow = (e) => `<a class="event-row" href="akce-${e.slug}.html" data-im
 </a>`;
 const EVENT_FLOAT = `<div class="event-float" id="eventFloat" aria-hidden="true"><img src="" alt=""></div>`;
 
+/* ================= SHOP TABS (filtr / navigace kategorií) ================= */
+const SHOP_TABS = [
+  ['all', 'Vše', 'obchod.html'],
+  ['vino', 'Vína', 'vino.html'],
+  ['obleceni', 'Oblečení & boty', 'obleceni.html'],
+  ['sperky', 'Šperky & doplňky', 'sperky.html'],
+  ['poukazy', 'Poukazy', 'poukazy.html'],
+  ['tabory', 'Dětské tábory', 'tabory.html']
+];
+/* mode 'filter' = tlačítka filtrují grid na místě; 'nav' = odkazy mezi kategoriemi */
+const shopTabs = (active, mode) => `<div class="shop-tabs"${mode === 'filter' ? ' data-shop-tabs' : ''}>` +
+  SHOP_TABS.map(([key, label, url]) => {
+    const on = key === active ? ' on' : '';
+    const icon = key !== 'all' ? ` data-icon="${key}"` : '';
+    return mode === 'filter'
+      ? `<button class="shop-tab${on}" data-cat="${key}"${icon}>${label}</button>`
+      : `<a class="shop-tab${on}" href="${url}"${icon}>${label}</a>`;
+  }).join('') + `</div>`;
+
 /* ================= SHOP CARD HELPERS ================= */
 const wineCards = `
       <article class="wine-card">
@@ -820,40 +839,15 @@ pages.push({
   </div></section>`
 });
 
-/* ---- obchod (shop hub) ---- */
+/* ---- obchod (eshop hub s filtrem) ---- */
 pages.push({
   file: 'obchod.html', title: 'Shop', desc: 'Shop BeBirdie — kurátorovaná vinotéka, klubová kolekce, šperky, dárkové poukazy a tábory.',
-  body: hero({ kicker: 'Shop', title: 'Obchod pro dobrý vkus', crumb: [['Domů', 'index.html'], ['Shop', '']],
+  body: hero({ kicker: 'Eshop', title: 'Obchod pro dobrý vkus', crumb: [['Domů', 'index.html'], ['Shop', '']],
     lede: 'Vína, za kterými si stojíme, klubová kolekce a dárky, které potěší.' }) +
   `<section class="page-body" data-theme="ivory"><div class="container">
-    <div class="detail__actions" style="margin-bottom:var(--space-xl)">
-      <a class="link-arrow" href="vino.html">Víno <span class="arr">↗</span></a>
-      <a class="link-arrow" href="obleceni.html">Oblečení &amp; boty <span class="arr">↗</span></a>
-      <a class="link-arrow" href="sperky.html">Šperky &amp; doplňky <span class="arr">↗</span></a>
-      <a class="link-arrow" href="poukazy.html">Dárkové poukazy <span class="arr">↗</span></a>
-    </div>
-    <p class="kicker" id="vino" style="margin-bottom:var(--space-md)">Výběr sommeliera</p>
-    <div class="wine__grid" style="margin-bottom:var(--space-2xl)">${wineCards}</div>
-    <p class="kicker" style="margin-bottom:var(--space-md)">Klubová kolekce</p>
-    <div class="wine__grid" style="margin-bottom:var(--space-2xl)">
-      ${productCard('polo', 'Klubové polo BeBirdie', 'produkt-polo.html', IMG.polo, 'Klubová kolekce', 'Pima bavlna, vyšitý birdie na hrudi. V barvách ivory a ink.', 1490)}
-      ${productCard('svetr', 'Merino svetr BeBirdie', 'produkt-svetr.html', IMG.svetr, 'Klubová kolekce', 'Jemné merino na chladnější rána na greenu i do kanceláře.', 2990)}
-      ${productCard('marker', 'Stříbrný ball marker', 'produkt-marker.html', IMG.marker, 'Šperky & doplňky', 'Stříbro 925 s gravírováním iniciál. Dárek, který se neztratí.', 2490)}
-    </div>
-    <p class="kicker" id="poukazy" style="margin-bottom:var(--space-md)">Dárkové poukazy</p>
-    <p class="muted" style="max-width:38rem;margin-bottom:var(--space-md)">Darujte zážitek — poukaz lze uplatnit na turnaje, kurzy i vína. Platí 12 měsíců.</p>
-    <div class="wine__grid wine__grid--4" style="margin-bottom:var(--space-2xl)">
-      ${voucher('poukaz-2000', 2000)}${voucher('poukaz-4000', 4000)}${voucher('poukaz-6000', 6000)}${voucher('poukaz-8000', 8000)}
-    </div>
-    <p class="kicker" id="tabory" style="margin-bottom:var(--space-md)">Pro děti</p>
-    <div class="spread">
-      <div class="spread__media"><img class="ph-warm" src="${u(IMG.aerial)}" alt="Golfový tábor pro děti" onerror="this.style.display='none'"></div>
-      <div class="spread__body">
-        <span class="spread__num">Léto 2026</span>
-        <h3 class="h3">Sportovní příměstský tábor</h3>
-        <p>All-inclusive program pro děti 6–13 let na Rohanském ostrově. Golf s trenéry PGA a sport, který baví.</p>
-        <a class="link-arrow" href="tabory.html">Detail tábora <span class="arr">↗</span></a>
-      </div>
+    ${shopTabs('all', 'filter')}
+    <div class="shop-grid" data-shop-grid data-limit="0">
+      <noscript><p>Pro zobrazení nabídky zapněte JavaScript, nebo nám napište na <a href="mailto:bebirdie@bebirdie.cz" style="text-decoration:underline">bebirdie@bebirdie.cz</a>.</p></noscript>
     </div>
   </div></section>`
 });
@@ -861,16 +855,17 @@ pages.push({
 /* ---- vino ---- */
 pages.push({
   file: 'vino.html', title: 'Víno', desc: 'Kurátorovaná vinotéka BeBirdie — výběr sommeliera pro klubové večery i domácí sklep.',
-  body: hero({ kicker: 'Shop · víno', title: 'Výběr sommeliera', crumb: [['Domů', 'index.html'], ['Shop', 'obchod.html'], ['Víno', '']],
+  body: hero({ kicker: 'Eshop · víno', title: 'Výběr sommeliera', crumb: [['Domů', 'index.html'], ['Shop', 'obchod.html'], ['Víno', '']],
     lede: 'Tři láhve, za kterými si stojíme. Každé víno prošlo klubovou degustací — co neobstálo, neprodáváme.' }) +
   `<section class="page-body" data-theme="ivory"><div class="container">
-    <div class="wine__grid" style="margin-bottom:var(--space-xl)">${wineCards}</div>
+    ${shopTabs('vino', 'nav')}
+    <div class="shop-grid" data-shop-grid data-cat="vino" style="margin-bottom:var(--space-xl)"></div>
     <div class="prose">
       <h2>Jak vybíráme</h2>
       <p>Vína ochutnáváme na klubových degustacích — do vinotéky se dostane jen to, co obstojí před stovkou náročných chutí. Členové klubu nakupují se slevou a mají přístup k limitovaným šaržím.</p>
     </div>
     <div class="detail__actions" style="margin-top:var(--space-md)">
-      <a class="btn btn--ink" href="obchod.html"><span class="lbl"><span>Celý shop</span><span>Celý shop</span></span></a>
+      <a class="btn btn--ink" href="obchod.html"><span class="lbl"><span>Celý eshop</span><span>Celý eshop</span></span></a>
       <a class="link-arrow" href="poukazy.html">Raději darujete? Poukazy <span class="arr">↗</span></a>
     </div>
   </div></section>`
@@ -879,18 +874,15 @@ pages.push({
 /* ---- obleceni ---- */
 pages.push({
   file: 'obleceni.html', title: 'Oblečení & boty', desc: 'Klubová kolekce BeBirdie — polo, merino svetry a golfová obuv.',
-  body: hero({ kicker: 'Shop · oblečení & boty', title: 'Klubová kolekce', crumb: [['Domů', 'index.html'], ['Shop', 'obchod.html'], ['Oblečení &amp; boty', '']],
+  body: hero({ kicker: 'Eshop · oblečení & boty', title: 'Klubová kolekce', crumb: [['Domů', 'index.html'], ['Shop', 'obchod.html'], ['Oblečení &amp; boty', '']],
     lede: 'Navrženo pro green i kancelář. Střídmé střihy, prémiové materiály a birdie tam, kde ho poznají jen zasvěcení.' }) +
   `<section class="page-body" data-theme="ivory"><div class="container">
-    <div class="wine__grid" style="margin-bottom:var(--space-xl)">
-      ${productCard('polo', 'Klubové polo BeBirdie', 'produkt-polo.html', IMG.polo, 'Pima bavlna · ivory / ink', 'Vyšitý birdie na hrudi. Střih, který sedí na odpališti i u večeře.', 1490)}
-      ${productCard('svetr', 'Merino svetr BeBirdie', 'produkt-svetr.html', IMG.svetr, '100% merino · ink', 'Jemné merino na chladnější rána na greenu i do kanceláře.', 2990)}
-      ${productCard('obuv', 'Klubová golfová obuv', 'produkt-obuv.html', IMG.obuv, 'Limitovaná edice · burgundy', 'Kožený svršek, soft-spike podrážka. Vyrobeno v limitované sérii.', 4490, 'Limited')}
-    </div>
+    ${shopTabs('obleceni', 'nav')}
+    <div class="shop-grid" data-shop-grid data-cat="obleceni" style="margin-bottom:var(--space-xl)"></div>
     <p class="muted" style="max-width:40rem">Členové klubu nakupují kolekci se slevou 10 %. Velikostní tabulku a výměny řešíme osobně — napište na <a href="mailto:bebirdie@bebirdie.cz" style="text-decoration:underline">bebirdie@bebirdie.cz</a>.</p>
     <div class="detail__actions" style="margin-top:var(--space-md)">
-      <a class="btn btn--ink" href="sperky.html"><span class="lbl"><span>Šperky &amp; doplňky</span><span>Šperky &amp; doplňky</span></span></a>
-      <a class="link-arrow" href="obchod.html">Celý shop <span class="arr">↗</span></a>
+      <a class="btn btn--ink" href="obchod.html"><span class="lbl"><span>Celý eshop</span><span>Celý eshop</span></span></a>
+      <a class="link-arrow" href="sperky.html">Šperky &amp; doplňky <span class="arr">↗</span></a>
     </div>
   </div></section>`
 });
@@ -898,17 +890,14 @@ pages.push({
 /* ---- sperky ---- */
 pages.push({
   file: 'sperky.html', title: 'Šperky & doplňky', desc: 'Šperky a doplňky BeBirdie — stříbrné ball markery, manžetové knoflíčky a kožené doplňky.',
-  body: hero({ kicker: 'Shop · šperky & doplňky', title: 'Detaily, které hrají', crumb: [['Domů', 'index.html'], ['Shop', 'obchod.html'], ['Šperky &amp; doplňky', '']],
+  body: hero({ kicker: 'Eshop · šperky & doplňky', title: 'Detaily, které hrají', crumb: [['Domů', 'index.html'], ['Shop', 'obchod.html'], ['Šperky &amp; doplňky', '']],
     lede: 'Drobnosti, které dělají hráče. Stříbro, mosaz a italská kůže — s gravírováním v ceně.' }) +
   `<section class="page-body" data-theme="ivory"><div class="container">
-    <div class="wine__grid" style="margin-bottom:var(--space-xl)">
-      ${productCard('marker', 'Stříbrný ball marker', 'produkt-marker.html', IMG.marker, 'Stříbro 925', 'Gravírování iniciál v ceně. Dárek, který se na greenu neztratí.', 2490)}
-      ${productCard('knoflicky', 'Manžetové knoflíčky Birdie', 'produkt-knoflicky.html', IMG.prsten, 'Mosaz · zlacení', 'Motiv birdie pro slavnostní večery. V klubové dárkové kazetě.', 3990)}
-      ${productCard('pouzdro', 'Kožené pouzdro na skórkartu', 'produkt-pouzdro.html', IMG.kuze, 'Italská kůže', 'Ručně šité, s kapsou na tužku a markery. Personalizace ražbou.', 1990)}
-    </div>
+    ${shopTabs('sperky', 'nav')}
+    <div class="shop-grid" data-shop-grid data-cat="sperky" style="margin-bottom:var(--space-xl)"></div>
     <div class="detail__actions">
-      <a class="btn btn--ink" href="poukazy.html"><span class="lbl"><span>Dárkové poukazy</span><span>Dárkové poukazy</span></span></a>
-      <a class="link-arrow" href="obchod.html">Celý shop <span class="arr">↗</span></a>
+      <a class="btn btn--ink" href="obchod.html"><span class="lbl"><span>Celý eshop</span><span>Celý eshop</span></span></a>
+      <a class="link-arrow" href="poukazy.html">Dárkové poukazy <span class="arr">↗</span></a>
     </div>
   </div></section>`
 });
@@ -916,12 +905,11 @@ pages.push({
 /* ---- poukazy ---- */
 pages.push({
   file: 'poukazy.html', title: 'Dárkové poukazy', desc: 'Dárkové poukazy BeBirdie 2 000 až 8 000 Kč — na turnaje, kurzy, vína i kolekci.',
-  body: hero({ kicker: 'Shop · dárkové poukazy', title: 'Darujte zážitek', crumb: [['Domů', 'index.html'], ['Shop', 'obchod.html'], ['Dárkové poukazy', '']],
+  body: hero({ kicker: 'Eshop · dárkové poukazy', title: 'Darujte zážitek', crumb: [['Domů', 'index.html'], ['Shop', 'obchod.html'], ['Dárkové poukazy', '']],
     lede: 'Poukaz lze uplatnit na cokoliv z klubu — turnaj, kurz AI, víno i kolekci. Platí 12 měsíců.' }) +
   `<section class="page-body" data-theme="ivory"><div class="container">
-    <div class="wine__grid wine__grid--4" style="margin-bottom:var(--space-2xl)">
-      ${voucher('poukaz-2000', 2000)}${voucher('poukaz-4000', 4000)}${voucher('poukaz-6000', 6000)}${voucher('poukaz-8000', 8000)}
-    </div>
+    ${shopTabs('poukazy', 'nav')}
+    <div class="shop-grid" data-shop-grid data-cat="poukazy" style="margin-bottom:var(--space-2xl)"></div>
     <p class="kicker" style="margin-bottom:var(--space-md)">Jak to funguje</p>
     <ol class="steps" style="margin-bottom:var(--space-xl)">
       <li><span class="n tnum">01</span><b>Vyberete hodnotu</b><p>Od 2 000 do 8 000 Kč. Vyšší hodnotu připravíme na míru — stačí napsat.</p></li>
@@ -941,7 +929,7 @@ const productPage = (slug, name, origin, price, img, notes, facts, unit) => ({
   body: hero({ kicker: 'Shop', title: name, crumb: [['Domů', 'index.html'], ['Shop', 'obchod.html'], [name, '']] }) +
   `<section class="page-body" data-theme="ivory"><div class="container">
     <div class="detail">
-      <div class="detail__media"><img src="${u(img, 1200)}" alt="${name}" onerror="this.style.display='none'"></div>
+      <div class="detail__media"><img src="${img.startsWith('http') ? u(img, 1200) : img}" alt="${name}" onerror="this.style.display='none'"></div>
       <div>
         <p class="origin" style="font-size:.75rem;letter-spacing:.14em;text-transform:uppercase;color:var(--t-mut-l);font-weight:600;margin-bottom:1rem">${origin}</p>
         <p class="body-lg" style="max-width:34rem;font-family:var(--serif);font-style:italic">${notes}</p>
@@ -965,7 +953,7 @@ pages.push(productPage('i-pecorari', 'I Pecorari', 'Friuli · Itálie', '239', I
 pages.push(productPage('casal', 'Casal da Coelheira 2022', 'Tejo · Portugalsko', '220', IMG.wineDark,
   'Plné, hřejivé červené z údolí Tejo. Zralé ovoce, jemné koření a dlouhý závěr — k večeru u krbu i k jednání.',
   [['Odrůda', 'cuvée · Touriga Nacional'], ['Ročník', '2022'], ['Servírovat', '16–18 °C'], ['Snoubení', 'grilované maso, tmavá čokoláda']], 'vč. DPH · 0,75 l'));
-pages.push(productPage('polo', 'Klubové polo BeBirdie', 'Klubová kolekce', '1 490', IMG.polo,
+pages.push(productPage('polo', 'Klubové polo BeBirdie', 'Klubová kolekce', '1 490', 'assets/produkt-polo.jpg',
   'Pima bavlna s vyšitým birdie na hrudi. Střih, který sedí na odpališti i u večeře.',
   [['Materiál', '100% pima bavlna'], ['Barvy', 'ivory · ink'], ['Velikosti', 'S–XXL'], ['Údržba', 'praní 30 °C']]));
 pages.push(productPage('svetr', 'Merino svetr BeBirdie', 'Klubová kolekce', '2 990', IMG.svetr,
@@ -990,8 +978,9 @@ pages.push({
   body: hero({ kicker: 'Pro děti · léto 2026', title: 'Sportovní příměstský tábor', crumb: [['Domů', 'index.html'], ['Golfové túry', 'tury.html'], ['Tábory', '']],
     lede: 'All-inclusive týden, po kterém bude vaše dítě mluvit jen o golfu.' }) +
   `<section class="page-body" data-theme="ivory"><div class="container">
-    <div class="detail">
-      <div class="detail__media"><img class="ph-warm" src="${u(IMG.aerial, 1200)}" alt="Golfový tábor" onerror="this.style.display='none'"></div>
+    ${shopTabs('tabory', 'nav')}
+    <div class="detail" style="margin-top:var(--space-lg)">
+      <div class="detail__media"><img src="assets/tabor.jpg" alt="Děti na golfovém táboře s trenérem" onerror="this.style.display='none'"></div>
       <div>
         <p class="body-lg" style="max-width:36rem">Dopoledne golf s trenéry PGA, odpoledne sport a hry. Program kombinuje trénink se zábavou tak, aby děti sportovaly celý den — a večer měly co vyprávět.</p>
         <ul class="detail__facts">

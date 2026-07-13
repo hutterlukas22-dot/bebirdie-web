@@ -342,8 +342,8 @@ section[data-theme="ivory"] .btn--ghost,section[data-theme="ivory-2"] .btn--ghos
 .hero__cue::after{content:"";position:absolute;left:0;top:-40%;width:100%;height:40%;background:var(--gold);animation:cue 2.2s var(--ease-in-out) infinite}
 @keyframes cue{0%{top:-40%}60%,100%{top:110%}}
 
-/* ============ EVENING (pinned) ============ */
-.evening{overflow:hidden;background:var(--ink);color:var(--t-light)}
+/* ============ EVENING (pinned) — světlá kapitola, plnobarevné panely ============ */
+.evening{overflow:hidden;background:var(--ivory);color:var(--t-dark)}
 .evening__intro{width:var(--container);margin-inline:auto;padding:var(--space-2xl) 0 var(--space-xl)}
 .evening__intro .display{max-width:24ch;margin-top:var(--space-md)}
 .evening__track{display:flex;will-change:transform}
@@ -352,15 +352,18 @@ section[data-theme="ivory"] .btn--ghost,section[data-theme="ivory-2"] .btn--ghos
 .evening__panel:first-child{margin-left:calc((100vw - var(--container))/2)}
 .evening__panel:last-child{margin-right:calc((100vw - var(--container))/2)}
 .evening__panel img{position:absolute;inset:0;width:100%;height:106%;object-fit:cover;
-  filter:saturate(.68) sepia(.1) brightness(.6)}
+  filter:saturate(.92) contrast(1.02)}
+/* spodní scrim jen pro čitelnost popisku na fotce */
+.evening__panel::after{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;
+  background:linear-gradient(180deg,rgba(27,18,20,0) 42%,rgba(27,18,20,.82) 100%)}
 .evening__panel .ghost{position:absolute;right:-2%;top:-6%;z-index:2;
   font-family:var(--serif);font-weight:300;font-size:clamp(10rem,22vw,20rem);line-height:1;
-  color:transparent;-webkit-text-stroke:1px rgba(216,170,76,.32);pointer-events:none}
+  color:transparent;-webkit-text-stroke:1px rgba(255,255,255,.34);pointer-events:none}
 .evening__panel .txt{position:absolute;left:clamp(1.5rem,4vw,3.5rem);bottom:clamp(1.5rem,4vw,3rem);z-index:3;max-width:34rem}
 .evening__panel .time{font-family:var(--serif);font-weight:300;font-size:clamp(2.4rem,4.5vw,4rem);
   color:var(--gold-soft);display:block;margin-bottom:.6rem;font-variant-numeric:tabular-nums}
-.evening__panel .cap{font-size:clamp(1.05rem,1.4vw,1.3rem);line-height:1.5}
-.evening__panel .cap b{font-weight:600}
+.evening__panel .cap{font-size:clamp(1.05rem,1.4vw,1.3rem);line-height:1.5;color:var(--t-light)}
+.evening__panel .cap b{font-weight:600;color:#fff}
 @media (min-width:768px){.evening__pin{padding-bottom:var(--space-xl)}}
 @media (max-width:767px){
   .evening__track{display:block}
@@ -729,6 +732,83 @@ section[data-theme="ivory"] .btn--ghost,section[data-theme="ivory-2"] .btn--ghos
 .empty svg{width:56px;height:56px;stroke:var(--gold);fill:none;stroke-width:1.2;margin:0 auto var(--space-sm)}
 .empty .h4{margin-bottom:.6rem}
 .empty p{color:var(--t-mut-l);margin-bottom:var(--space-md)}
+
+/* ============ SHOP TABS (filtr produktů) ============ */
+.shop-teaser{padding:var(--space-2xl) 0}
+.shop-tabs{display:flex;gap:.6rem;flex-wrap:wrap;align-items:center}
+.shop-tab{display:inline-flex;align-items:center;gap:.55rem;min-height:44px;padding:0 1.2rem;
+  border-radius:999px;border:1px solid rgba(33,23,25,.18);background:#fff;
+  font-size:.7rem;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:var(--t-dark);
+  cursor:pointer;white-space:nowrap;
+  transition:border-color .2s ease,background .2s ease,color .2s ease,transform .2s var(--ease-out-expo)}
+.shop-tab svg{width:15px;height:15px;stroke:var(--burgundy);fill:none;stroke-width:1.6;
+  stroke-linecap:round;stroke-linejoin:round;flex:none;transition:stroke .2s ease}
+.shop-tab:hover{border-color:var(--gold-deep);transform:translateY(-1px)}
+.shop-tab.on{background:var(--ink);color:var(--ivory);border-color:var(--ink)}
+.shop-tab.on svg{stroke:var(--gold-soft)}
+@media (max-width:767px){
+  .shop-tabs{flex-wrap:nowrap;overflow-x:auto;padding-bottom:.6rem;
+    margin-inline:calc(-1*(100vw - var(--container))/2);padding-inline:calc((100vw - var(--container))/2)}
+}
+
+/* ============ PRODUKTOVÉ KARTY (jednotné, max 3 v řadě) ============ */
+.shop-grid{display:grid;grid-template-columns:repeat(3,1fr);
+  gap:clamp(2rem,3vw,3.2rem) clamp(1.2rem,2vw,2rem);margin-top:var(--space-lg)}
+.p-card{position:relative;display:flex;flex-direction:column}
+.p-card__ph{position:relative;display:block;aspect-ratio:1/1.08;overflow:hidden;background:var(--ivory-2)}
+.p-card__ph img{width:100%;height:100%;object-fit:cover;filter:saturate(.85);
+  transition:transform .8s var(--ease-out-expo)}
+.p-card:hover .p-card__ph img{transform:scale(1.04)}
+.p-card__tile{width:100%;height:100%;display:grid;place-items:center;color:var(--t-dark);
+  background:linear-gradient(135deg,var(--sand),var(--ivory-2))}
+.p-card__tile svg{display:block;margin:0 auto .9rem}
+.p-card__tile .val{display:block;font-family:var(--serif);font-weight:300;font-size:clamp(1.7rem,2vw,2.1rem)}
+.p-card__badge{position:absolute;top:.9rem;left:.9rem;z-index:3;font-size:.62rem;font-weight:700;
+  letter-spacing:.14em;text-transform:uppercase;padding:.4rem .85rem;border-radius:999px;
+  background:var(--ink);color:var(--gold-soft)}
+.p-card__badge--sale{background:var(--burgundy);color:#fff}
+.p-card .wish{position:absolute;top:.8rem;right:.8rem;z-index:3;width:44px;height:44px;border-radius:50%;
+  background:rgba(249,246,240,.92);display:grid;place-items:center;box-shadow:var(--shadow-md);
+  transition:transform .25s var(--ease-out-expo),background .2s}
+.p-card .wish svg{width:19px;height:19px;fill:none;stroke:var(--t-dark);stroke-width:1.7;transition:fill .2s,stroke .2s}
+.p-card .wish:hover{transform:scale(1.08)}
+.p-card .wish.on svg{fill:var(--burgundy);stroke:var(--burgundy)}
+.p-card__name{font-family:var(--serif);font-weight:400;font-size:1.32rem;line-height:1.25;margin-top:1.25rem}
+.p-card__name a{transition:color .2s}
+.p-card__name a:hover{color:var(--gold-deep)}
+.p-card__cat{font-size:.7rem;font-weight:600;letter-spacing:.13em;text-transform:uppercase;
+  color:var(--t-mut-l);margin-top:.35rem}
+.p-card__note{font-family:var(--serif);font-weight:340;font-style:italic;font-size:.93rem;
+  color:var(--t-mut-l);margin-top:.55rem;
+  display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;min-height:2.85em}
+.p-card__row{margin-top:auto;padding-top:1rem;display:flex;justify-content:space-between;align-items:baseline;
+  border-top:1px solid rgba(33,23,25,.14)}
+.p-card__note{margin-bottom:1.1rem}
+.p-card__price{font-weight:600;font-variant-numeric:tabular-nums}
+.p-card__price s{color:var(--t-mut-l);font-weight:400;font-size:.85em;margin-right:.5rem;text-decoration-color:var(--burgundy)}
+.p-card__add{font-size:.85rem;font-weight:600;color:var(--burgundy);display:inline-flex;gap:.4rem;
+  align-items:center;padding:.4rem 0;transition:color .2s}
+.p-card__add:hover{color:var(--gold-deep)}
+@media (max-width:1080px){.shop-grid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:600px){.shop-grid{grid-template-columns:1fr}}
+/* --- eshop na tmavém podkladu (homepage teaser) --- */
+[data-theme="ink"] .shop-tab{background:transparent;border-color:rgba(246,241,231,.26);color:var(--t-light)}
+[data-theme="ink"] .shop-tab:hover{border-color:var(--gold-soft);background:rgba(246,241,231,.04)}
+[data-theme="ink"] .shop-tab.on{background:var(--ivory);color:var(--ink);border-color:var(--ivory)}
+[data-theme="ink"] .shop-tab.on svg{stroke:var(--burgundy)}
+[data-theme="ink"] .p-card__cat{color:var(--t-mut-d)}
+[data-theme="ink"] .p-card__note{color:var(--t-mut-d)}
+[data-theme="ink"] .p-card__row{border-top-color:rgba(246,241,231,.16)}
+[data-theme="ink"] .p-card__name a:hover{color:var(--gold-soft)}
+[data-theme="ink"] .p-card__price s{color:var(--t-mut-d)}
+[data-theme="ink"] .p-card__add{color:#e5555a} /* rozjasněná brandová červená pro čitelnost na tmavém (AA) */
+[data-theme="ink"] .p-card__add:hover{color:var(--gold-soft)}
+/* homepage teaser: na mobilu horizontální rail */
+@media (max-width:767px){
+  .shop-teaser .shop-grid{display:flex;gap:1.2rem;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:1rem;
+    margin-inline:calc(-1*(100vw - var(--container))/2);padding-inline:calc((100vw - var(--container))/2)}
+  .shop-teaser .p-card{flex:0 0 74vw;scroll-snap-align:start}
+}
 
 /* ============ RANKING TABLE ============ */
 .rank{width:100%;border-collapse:collapse}
