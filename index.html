@@ -82,42 +82,28 @@
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 8h12l-1 11a2 2 0 0 1-2 1.8H9a2 2 0 0 1-2-1.8L6 8z"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8"/></svg>
         <span class="nav__badge" id="cartBadge">0</span>
       </button>
-      <a class="btn btn--solid" href="klub.html"><span class="lbl"><span>Požádat o členství</span><span>Požádat o členství</span></span></a>
+      <a class="btn btn--solid nav__cta-primary" href="kalendar.html"><span class="lbl"><span>Kalendář akcí</span><span>Kalendář akcí</span></span></a>
+      <a class="btn btn--ghost nav__cta-secondary" href="clenska-zona.html"><span class="lbl"><span>Registrovat se</span><span>Registrovat se</span></span></a>
       <button class="nav__burger" data-open="ovlMenu" aria-label="Otevřít menu"><span></span><span></span><span></span></button>
     </div>
   </div>
 </header>
 
 <main id="main">
-<!-- ============ 01 · MANIFEST ============ -->
-<section class="hero" aria-label="Úvod">
-  <div class="hero__media"><img id="heroImg" class="img-brand" src="assets/hero.jpg" alt="Golfista při odpalu, společnost se sklenkami vína na hřišti" fetchpriority="high"></div>
-  <div class="hero__scrim"></div>
-  <div class="hero__content">
-    <div class="hero__left">
-      <p class="kicker hero__kicker" data-hero-fade>Byznys &amp; lifestyle klub · Praha</p>
-      <h1 class="display-xl split-lines" id="heroTitle">Kde se byznys stává životním stylem.</h1>
-      <p class="hero__tag" data-hero-fade>Buď, kým chceš.</p>
-      <div class="hero__actions" data-hero-fade>
-        <a class="btn btn--solid" href="klub.html"><span class="lbl"><span>Požádat o členství</span><span>Požádat o členství</span></span></a>
-        <a class="link-arrow" href="kalendar.html">Prohlédnout kalendář <span class="arr">↗</span></a>
-      </div>
-    </div>
-    <div class="hero__next" data-hero-fade>
-      <span class="lbl">Nejbližší akce</span>
-      <a href="akce-konopiste.html" class="tnum">Open Tour — Golf Konopiště · 11. 7. <span style="color:var(--gold)">↗</span></a>
-    </div>
-  </div>
-  <div class="hero__cue" aria-hidden="true"></div>
-</section>
-
-<!-- ============ 02 · ESHOP ============ -->
-<section class="shop-teaser" data-theme="ink" id="eshop" aria-label="Eshop">
+<!-- ============ 01 · ESHOP (úvodní sekce) ============ -->
+<section class="shop-teaser shop-teaser--hero" data-theme="ink" id="eshop" aria-label="BeBirdie shop">
   <div class="container">
+    <a class="ev-teaser" href="akce-konopiste.html" data-reveal>
+      <span class="ev-teaser__pulse" aria-hidden="true"></span>
+      <span class="ev-teaser__label">Nejbližší akce</span>
+      <span class="ev-teaser__title">Open Tour — Golf Konopiště</span>
+      <span class="ev-teaser__date tnum">11.&nbsp;7.&nbsp;2026</span>
+      <span class="ev-teaser__cta">Rezervovat <span class="arr">→</span></span>
+    </a>
     <div class="calendar__head" style="margin-bottom:var(--space-md)">
       <div>
-        <p class="kicker" data-reveal><span class="num">02</span> BeBirdie shop</p>
-        <h2 class="display" data-reveal>Objednejte si z našeho eshopu</h2>
+        <p class="kicker" data-reveal><span class="num">01</span> BeBirdie shop</p>
+        <h1 class="display" data-reveal>Objednejte si z našeho eshopu</h1>
       </div>
       <a class="link-arrow" href="obchod.html" data-reveal>Zobrazit celý eshop <span class="arr">↗</span></a>
     </div>
@@ -138,7 +124,7 @@
 <!-- ============ 03 · JEDEN DEN V KLUBU ============ -->
 <section class="evening" id="vecer" aria-label="Jeden den v klubu">
   <div class="evening__intro">
-    <p class="kicker" data-reveal><span class="num">03</span> Jeden den v klubu</p>
+    <p class="kicker" data-reveal><span class="num">02</span> Jeden den v klubu</p>
     <h2 class="display" data-reveal>Neprodáváme akce. Režírujeme dny, na které se nezapomíná.</h2>
   </div>
   <div class="evening__pin">
@@ -174,7 +160,7 @@
 <!-- ============ 03 · TŘI SVĚTY ============ -->
 <section class="worlds" data-theme="ivory" id="svety" aria-label="Tři světy klubu">
   <div class="container">
-    <p class="kicker" data-reveal><span class="num">04</span> Tři světy klubu</p>
+    <p class="kicker" data-reveal><span class="num">03</span> Tři světy klubu</p>
     <p class="worlds__lede body-lg" data-reveal>Propojujeme svět sportu, osobního rozvoje a lifestylu. Jeden klub, tři cesty — a všechny vedou k lidem, které jinde nepotkáte.</p>
 
     <div class="spread">
@@ -214,7 +200,7 @@
   <div class="container">
     <div class="calendar__head">
       <div>
-        <p class="kicker" data-reveal><span class="num">05</span> Kalendář 2026</p>
+        <p class="kicker" data-reveal><span class="num">04</span> Kalendář 2026</p>
         <h2 class="display" data-reveal>Co nás čeká<br>v nejbližší době</h2>
       </div>
       <a class="link-arrow" href="kalendar.html" data-reveal>Celý kalendář akcí <span class="arr">↗</span></a>
@@ -264,7 +250,7 @@
   <div class="container">
     <div class="edu__head">
       <div>
-        <p class="kicker" data-reveal><span class="num">06</span> Vzdělávání</p>
+        <p class="kicker" data-reveal><span class="num">05</span> Vzdělávání</p>
         <h2 class="display" data-reveal>Rosťte rychleji než konkurence</h2>
       </div>
       <p data-reveal>Posouváme vás v kariéře skrze praktické kurzy — od umělé inteligence po digitální marketing. Vedou je lektoři z praxe, ne z prezentací.</p>
@@ -295,7 +281,7 @@
   <div class="container">
     <div class="membership__grid">
       <div class="membership__text">
-        <p class="kicker" data-reveal><span class="num">07</span> Klub &amp; členství</p>
+        <p class="kicker" data-reveal><span class="num">06</span> Klub &amp; členství</p>
         <h2 class="display" data-reveal>Klub, do kterého se nevstupuje. Do kterého jste přijati.</h2>
         <ul class="benefits">
           <li data-reveal><span class="n">I.</span> Přednostní rezervace turnajů a zájezdů</li>
@@ -358,7 +344,7 @@
   <div class="container">
     <div class="social__head">
       <div>
-        <p class="kicker" data-reveal><span class="num">08</span> Ze života klubu</p>
+        <p class="kicker" data-reveal><span class="num">07</span> Ze života klubu</p>
         <h2 class="display" data-reveal>Klub žije i mimo hřiště</h2>
       </div>
       <div data-reveal>
@@ -459,7 +445,7 @@
 <!-- ============ 09 · POZVÁNKA ============ -->
 <section class="invite" data-theme="ink" id="pozvanka" aria-label="Pozvánka">
   <div class="container">
-    <p class="kicker" data-reveal style="color:var(--gold)"><span class="num">09</span> Pozvánka</p>
+    <p class="kicker" data-reveal style="color:var(--gold)"><span class="num">08</span> Pozvánka</p>
     <h2 class="display split-lines" id="inviteTitle">Některé kruhy se nerozšiřují náhodou.</h2>
     <div class="invite__actions" data-reveal>
       <a class="btn btn--solid" href="klub.html"><span class="lbl"><span>Požádat o členství</span><span>Požádat o členství</span></span></a>

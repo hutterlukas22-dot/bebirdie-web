@@ -7,6 +7,7 @@
   /* palette — no green anywhere */
   --ink:#1b1214;          /* warm espresso black */
   --ink-2:#271a1d;        /* elevated dark surface */
+  --eshop-brown:#2a1a18;  /* teplý espresso — spoj hero ↔ eshop bez švu */
   --ivory:#f9f6f0;        /* bright paper */
   --ivory-2:#f1ebe1;      /* cards on paper */
   --sand:#e8ddc8;         /* hover tint on light */
@@ -159,15 +160,21 @@ section[data-theme="ivory"] .btn--ghost,section[data-theme="ivory-2"] .btn--ghos
   background:var(--burgundy);color:#fff;font-size:.6rem;font-weight:700;line-height:16px;
   text-align:center;padding:0 4px;display:none}
 .nav__badge.on{display:block}
-.nav .btn{min-height:44px;padding:0 1.5rem;font-size:.85rem;margin-left:.6rem}
+.nav .btn{min-height:44px;padding:0 1.3rem;font-size:.83rem}
+.nav__cta-primary{margin-left:.7rem}
+.nav__cta-secondary{margin-left:.4rem}
 .nav--dark{color:var(--t-light)}
 .nav--solid,.nav--mega{background:rgba(249,246,240,.9);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);
   border-bottom:1px solid rgba(33,23,25,.08);color:var(--t-dark)}
 .nav--solid .btn--solid,.nav--mega .btn--solid{background:var(--ink);color:var(--ivory)}
 .nav--solid .btn--solid:hover,.nav--mega .btn--solid:hover{background:var(--ink-2)}
+.nav--solid .btn--ghost,.nav--mega .btn--ghost{border-color:rgba(33,23,25,.3);color:var(--t-dark)}
+.nav--solid .btn--ghost:hover,.nav--mega .btn--ghost:hover{border-color:var(--ink)}
 .nav__burger{display:none;width:48px;height:48px;flex-direction:column;gap:5px;align-items:center;justify-content:center;border-radius:50%}
 .nav__burger span{display:block;width:22px;height:1.6px;background:currentColor;transition:transform .3s ease,opacity .3s ease}
-@media (max-width:1459px){.nav .btn{display:none}}
+/* CTA responsive: obě na širokém, jen primární na středním, žádné v mobilu */
+@media (max-width:1500px){.nav__cta-secondary{display:none}}
+@media (max-width:1239px){.nav__cta-primary{display:none}}
 @media (max-width:1199px){
   .nav__links{display:none}
   .nav__burger{display:flex}
@@ -322,7 +329,7 @@ section[data-theme="ivory"] .btn--ghost,section[data-theme="ivory-2"] .btn--ghos
 .hero__media img{width:100%;height:100%;object-fit:cover;filter:saturate(.75) sepia(.06) brightness(.6)}
 .hero__media img.img-brand{filter:brightness(.9)} /* předgradovaný brandový vizuál — bez dalšího tónování */
 .hero__scrim{position:absolute;inset:0;z-index:1;
-  background:linear-gradient(180deg,rgba(27,18,20,.5) 0%,rgba(27,18,20,.2) 38%,rgba(27,18,20,.93) 100%)}
+  background:linear-gradient(180deg,rgba(27,18,20,.5) 0%,rgba(27,18,20,.22) 40%,rgba(27,18,20,.92) 78%,#1B1214 100%)}
 .hero__content{position:relative;z-index:2;width:var(--container);margin-inline:auto;
   padding-bottom:clamp(3rem,6vh,5.5rem);display:grid;grid-template-columns:1fr auto;align-items:end;gap:2rem}
 .hero__left{max-width:56rem}
@@ -735,6 +742,33 @@ section[data-theme="ivory"] .btn--ghost,section[data-theme="ivory-2"] .btn--ghos
 
 /* ============ SHOP TABS (filtr produktů) ============ */
 .shop-teaser{padding:var(--space-2xl) 0}
+.shop-teaser[data-theme="ink"]{background:#1B1214}
+.shop-teaser::before{content:none}
+/* úvodní (hero) varianta — odsazení pod fixní navbar */
+.shop-teaser--hero{padding-top:calc(80px + var(--space-lg))}
+
+/* ============ TEASER NEJBLIŽŠÍ AKCE ============ */
+.ev-teaser{display:inline-flex;align-items:center;gap:clamp(.7rem,1.4vw,1.1rem);flex-wrap:wrap;
+  padding:.65rem 1.5rem .65rem 1.15rem;border:1px solid rgba(246,241,231,.18);border-radius:999px;
+  background:rgba(246,241,231,.03);color:var(--t-light);max-width:100%;
+  margin-bottom:var(--space-lg);transition:border-color .3s ease,background .3s ease}
+.ev-teaser:hover{border-color:var(--gold-soft);background:rgba(216,170,76,.07)}
+.ev-teaser__pulse{width:8px;height:8px;border-radius:50%;background:var(--gold);position:relative;flex:none}
+.ev-teaser__pulse::after{content:"";position:absolute;inset:-4px;border-radius:50%;
+  border:1px solid var(--gold);opacity:.5;animation:evpulse 2.4s ease-out infinite}
+@keyframes evpulse{0%{transform:scale(.5);opacity:.7}100%{transform:scale(2);opacity:0}}
+.reduced .ev-teaser__pulse::after,.no-js .ev-teaser__pulse::after{animation:none}
+.ev-teaser__label{font-size:.66rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--gold-soft);white-space:nowrap}
+.ev-teaser__title{font-family:var(--serif);font-size:1.05rem;line-height:1.2}
+.ev-teaser__date{font-size:.85rem;color:var(--t-mut-d);white-space:nowrap}
+.ev-teaser__cta{font-size:.8rem;font-weight:600;color:var(--gold-soft);display:inline-flex;gap:.4rem;
+  align-items:center;padding-left:clamp(.6rem,1.2vw,1rem);border-left:1px solid rgba(246,241,231,.18);white-space:nowrap}
+.ev-teaser__cta .arr{transition:transform .3s var(--ease-out-expo)}
+.ev-teaser:hover .ev-teaser__cta .arr{transform:translateX(4px)}
+@media (max-width:560px){
+  .ev-teaser{gap:.55rem .9rem;padding:.7rem 1.1rem;border-radius:16px}
+  .ev-teaser__cta{border-left:none;padding-left:0;flex-basis:100%}
+}
 .shop-tabs{display:flex;gap:.6rem;flex-wrap:wrap;align-items:center}
 .shop-tab{display:inline-flex;align-items:center;gap:.55rem;min-height:44px;padding:0 1.2rem;
   border-radius:999px;border:1px solid rgba(33,23,25,.18);background:#fff;
